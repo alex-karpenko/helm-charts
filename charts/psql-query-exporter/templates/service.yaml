@@ -1,0 +1,28 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "psql-query-exporter.fullname" . }}
+  labels:
+    {{- include "psql-query-exporter.labels" . | nindent 4 }}
+  annotations:
+    {{- if .Values.prometheus.serviceAnnotations }}
+    prometheus.io/port: {{ .Values.service.port | quote }}
+    prometheus.io/scheme: http
+    prometheus.io/path: /metrics
+    prometheus.io/scrape: "true"
+    {{- end }}
+spec:
+  type: {{ .Values.service.type }}
+  ports:
+    - port: {{ .Values.service.port }}
+      targetPort: http
+      protocol: TCP
+      name: http
+    {{- if and .Values.prometheus.portName .Values.prometheus.serviceAnnotations }}
+    - port: {{ .Values.service.port }}
+      targetPort: http
+      protocol: TCP
+      name: {{ .Values.prometheus.portName }}
+    {{- end }}
+  selector:
+    {{- include "psql-query-exporter.selectorLabels" . | nindent 4 }}
