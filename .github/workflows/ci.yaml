@@ -9,5 +9,5 @@ jobs:
       - name: Lint helm charts
         run: |
           for c in `ls charts`; do
-            helm lint helm/${c}
+            helm lint charts/${c}
           done
