@@ -119,6 +119,8 @@ createConfigMaps: []
 
 # info or debug, anything else - warning
 logLevel: warning
+# Write logs in JSON format if true
+logJson: false
 
 config: {}
 #  defaults:
