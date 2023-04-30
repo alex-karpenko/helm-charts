@@ -31,6 +31,9 @@ spec:
           args:
             - --config
             - /app/config.yaml
+            {{- if .Values.logJson }}
+            - --json-log
+            {{- end }}
             {{- with .Values.logLevel }}
             {{- if eq "info" . }}
             - -v
