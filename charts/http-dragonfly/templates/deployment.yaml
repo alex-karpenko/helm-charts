@@ -1,0 +1,141 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "http-dragonfly.fullname" . }}
+  labels:
+    {{- include "http-dragonfly.labels" . | nindent 4 }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      {{- include "http-dragonfly.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      annotations:
+        checksum/config: {{ include (print .Template.BasePath "/config.yaml") . | sha256sum }}
+      {{- with .Values.podAnnotations }}
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      labels:
+        {{- include "http-dragonfly.selectorLabels" . | nindent 8 }}
+    spec:
+      {{- with .Values.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      serviceAccountName: {{ include "http-dragonfly.serviceAccountName" . }}
+      securityContext:
+        {{- toYaml .Values.podSecurityContext | nindent 8 }}
+      containers:
+        - name: {{ .Chart.Name }}
+          args:
+            - --config
+            - /app/config.yaml
+            - --health-check-port
+            - {{ .Values.service.healthCheck.port | quote }}
+            {{- if .Values.logJson }}
+            - --json-log
+            {{- end }}
+            {{- if .Values.envMask }}
+            - --env-mask
+            - {{ .Values.envMask | quote }}
+            {{- end }}
+            {{- with .Values.logLevel }}
+            {{- if eq "info" . }}
+            - -v
+            {{- else if eq "debug" . }}
+            - -d
+            {{- end }}
+            {{- end }}
+          {{- with .Values.secrets }}
+          envFrom:
+            {{- range . }}
+            - secretRef:
+                name: {{ . }}
+            {{- end }}
+          {{- end }}
+          {{- with .Values.podEnv }}
+          env:
+            {{- range $k, $v := . }}
+            - name: {{ $k }}
+              value: {{ $v | quote }}
+            {{- end }}
+          {{- end }}
+          securityContext:
+            {{- toYaml .Values.securityContext | nindent 12 }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          ports:
+            - name: health-check
+              containerPort: {{ .Values.service.healthCheck.port }}
+              protocol: TCP
+            {{- range .Values.service.listeners }}
+            - containerPort: {{ .port }}
+              protocol: TCP
+              {{- if .name }}
+              name: {{ .name }}
+              {{- end }}
+            {{- end }}
+          livenessProbe:
+            httpGet:
+              path: /
+              port: health-check
+          readinessProbe:
+            httpGet:
+              path: /
+              port: health-check
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
+          volumeMounts:
+            - name: config
+              mountPath: /app/config.yaml
+              readOnly: true
+              subPath: config.yaml
+            {{- range .Values.secretMounts }}
+            - name: {{ .name }}
+              mountPath: {{ .mountPath }}
+              readOnly: true
+            {{- end }}
+            {{- range .Values.configMapMounts }}
+            - name: {{ .name }}
+              mountPath: {{ .mountPath }}
+              readOnly: true
+            {{- end }}
+            {{- range .Values.createConfigMaps }}
+            - name: {{ .name | default (printf "%s-%s" (include "http-dragonfly.fullname" $) .folder) }}
+              mountPath: {{ .mountPath }}
+              readOnly: true
+            {{- end }}
+      {{- with .Values.nodeSelector }}
+      nodeSelector:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.affinity }}
+      affinity:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.tolerations }}
+      tolerations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      volumes:
+        - name: config
+          configMap:
+            name: {{ include "http-dragonfly.fullname" . }}-config
+            defaultMode: 0444
+        {{- range .Values.secretMounts }}
+        - name: {{ .name }}
+          secret:
+            secretName: {{ .name }}
+            defaultMode: 0400
+        {{- end }}
+        {{- range .Values.configMapMounts }}
+        - name: {{ .name }}
+          configMap:
+            name: {{ .name }}
+        {{- end }}
+        {{- range .Values.createConfigMaps }}
+        - name: {{ .name | default (printf "%s-%s" (include "http-dragonfly.fullname" $) .folder) }}
+          configMap:
+            name: {{ .name | default (printf "%s-%s" (include "http-dragonfly.fullname" $) .folder) }}
+        {{- end }}

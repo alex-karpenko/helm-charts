@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "http-dragonfly.fullname" . }}
+  labels:
+    {{- include "http-dragonfly.labels" . | nindent 4 }}
+spec:
+  type: {{ .Values.service.type }}
+  ports:
+    {{- if .Values.service.healthCheck.expose }}
+    - port: {{ .Values.service.healthCheck.port }}
+      targetPort: {{ .Values.service.healthCheck.port }}
+      protocol: TCP
+      name: health-check
+    {{- end }}
+    {{- range .Values.service.listeners }}
+    - port: {{ .port }}
+      targetPort: {{ .port }}
+      protocol: TCP
+      {{- if .name }}
+      name: {{ .name }}
+      {{- end }}
+    {{- end }}
+  selector:
+    {{- include "http-dragonfly.selectorLabels" . | nindent 4 }}
