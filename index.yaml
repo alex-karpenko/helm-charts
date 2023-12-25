@@ -1,5 +1,16 @@
 apiVersion: v1
 entries:
+  http-dragonfly:
+  - apiVersion: v2
+    appVersion: v0.1.0
+    created: "2023-12-25T15:42:35.850261964Z"
+    description: http-dragonfly Helm chart
+    digest: 47eefc80ada83c9a2edae19e5f7f7309771f3093c55df8b7e969ef24a095f347
+    name: http-dragonfly
+    type: application
+    urls:
+    - https://github.com/alex-karpenko/helm-charts/releases/download/http-dragonfly-0.1.0/http-dragonfly-0.1.0.tgz
+    version: 0.1.0
   psql-query-exporter:
   - apiVersion: v2
     appVersion: v0.2.13
@@ -111,4 +122,4 @@ entries:
     urls:
     - https://github.com/alex-karpenko/helm-charts/releases/download/psql-query-exporter-0.3.0/psql-query-exporter-0.3.0.tgz
     version: 0.3.0
-generated: "2023-12-22T17:55:39.644866034Z"
+generated: "2023-12-25T15:42:35.850293343Z"
