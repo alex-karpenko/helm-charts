@@ -1,0 +1,46 @@
+{{- if .Values.autoScaling.enabled }}
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: {{ include "http-dragonfly.fullname" . }}
+  labels:
+    {{- include "http-dragonfly.labels" . | nindent 4 }}
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: {{ include "http-dragonfly.fullname" . }}
+  minReplicas: {{ .Values.autoScaling.minReplicas }}
+  maxReplicas: {{ .Values.autoScaling.maxReplicas }}
+  metrics:
+    {{- if or .Values.autoScaling.targetCPUUtilizationPercentage .Values.autoScaling.targetCpuValue }}
+    - type: Resource
+      resource:
+        name: cpu
+        target:
+          {{- if .Values.autoScaling.targetCpuValue }}
+          averageValue: {{ .Values.autoScaling.targetCpuValue }}
+          type: AverageValue
+          {{- else }}
+          averageUtilization: {{ .Values.autoScaling.targetCPUUtilizationPercentage }}
+          type: Utilization
+          {{- end }}
+    {{- end }}
+    {{- if or .Values.autoScaling.targetMemoryUtilizationPercentage .Values.autoScaling.targetMemoryValue }}
+    - type: Resource
+      resource:
+        name: memory
+        target:
+          {{- if .Values.autoScaling.targetMemoryValue }}
+          averageValue: {{ .Values.autoScaling.targetMemoryValue }}
+          type: AverageValue
+          {{- else }}
+          averageUtilization: {{ .Values.autoScaling.targetMemoryUtilizationPercentage }}
+          type: Utilization
+          {{- end }}
+    {{- end }}
+  {{- with .Values.autoScaling.behavior }}
+  behavior:
+    {{- toYaml . | nindent 4 }}
+  {{- end }}
+{{- end }}
