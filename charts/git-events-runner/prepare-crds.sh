@@ -2,8 +2,8 @@
 set -euo pipefail
 
 BASE_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
-CHART_DIR="${BASE_DIR}/git-events-runner"
-BUNDLE_FILE=${BASE_DIR}/crds.yaml
+CHART_DIR="${BASE_DIR}/../git-events-runner"
+BUNDLE_FILE=${BASE_DIR}/../crds.yaml
 
 # generate CRD bundle from the latest binary
 APP_VERSION=${LOCAL_APP_VERSION:-$(yq .appVersion ${CHART_DIR}/Chart.yaml)}
