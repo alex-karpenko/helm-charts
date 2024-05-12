@@ -6,6 +6,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+
+      - name: Prepare git-events-runner CRDs
+        run: charts/git-events-runner/prepare-crds.sh
+
       - name: Lint helm charts
         run: |
           for c in `ls charts`; do

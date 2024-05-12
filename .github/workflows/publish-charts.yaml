@@ -21,7 +21,10 @@ jobs:
           git config user.name "$GITHUB_ACTOR"
           git config user.email "$GITHUB_ACTOR@users.noreply.github.com"
 
+      - name: Prepare git-events-runner CRDs
+        run: charts/git-events-runner/prepare-crds.sh
+
       - name: Run chart-releaser
-        uses: helm/chart-releaser-action@v1.5.0
+        uses: helm/chart-releaser-action@v1.6.0
         env:
           CR_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
