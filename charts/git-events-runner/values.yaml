@@ -17,7 +17,7 @@ fullnameOverride: ""
 installCRDs: true
 
 serviceAccount:
-  # Specifies whether a service account should be created
+  # Specifies whether a controller service account should be created
   create: true
   # Automatically mount a ServiceAccount's API credentials?
   automount: true
@@ -28,10 +28,16 @@ serviceAccount:
   name: ""
 
 actionJobServiceAccounts:
+  # Specifies whether service accounts for jobs should be created
   create: true
+  # List of namespaces where triggers (and as result - Jobs) will be running
+  # Namespace of the controller is always included in the list by default
   namespaces: []
   # namespaces: ["default", "project"]
+
+  # Automatically mount a ServiceAccount's API credentials?
   automount: true
+  # Annotations to add to the service accounts
   annotations: {}
   # The name of the service account to use.
   # If not set and create is true, a name is generated using the full name template
@@ -39,15 +45,25 @@ actionJobServiceAccounts:
   name: ""
 
 rbac:
+  # Whether to create RBAC resources for controller and jobs
   create: true
+
+  # RBAC settings for controller
   controller:
+    # List of namespaces where access to secrets is permitted for the controller
     secretsNamespaces: []
-    # secretsNamespaces: ["*"]
+    # secretsNamespaces: ["*"] # This is special case with access to all secrets in all namespaces
     # secretsNamespaces: ["default, "project"]
+
+    # List of namespaces where controller is permitted to execute jobs
+    # Usually this is the same list as `.Values.actionJobServiceAccounts.namespaces`
     jobsNamespaces: []
-    # jobsNamespaces: ["*"]
+    # jobsNamespaces: ["*"] # This is special case with jobs permissions in all namespaces
     # jobsNamespaces: ["default, "project"]
+
+  # RBAC settings to action jobs
   actionJobServiceAccounts:
+    # Bind default jobs roles to Job's service accounts in namespaces from `.Values.actionJobServiceAccounts.namespaces`
     createRoleBindings: true
 
 podAnnotations: {}
@@ -64,8 +80,11 @@ securityContext:
   runAsNonRoot: true
   runAsUser: 1000
 
+# Service resources to access  utility and webhooks ports
 service:
   utility:
+    # If type is defined then Service will be created
+    # Usually you don't need service to access utility web port
     # type: ClusterIP
     port: 3000
   webhook:
@@ -142,19 +161,25 @@ tolerations: []
 
 affinity: {}
 
+# Static (command line) options of the controller
 controllerOptions:
-  logLevel: info
+  logLevel: info # or debug. Empty means warning level
   leaderLease:
-    duration: 30
-    grace: 20
-  scheduleParallelism: 16
-  webhooksParallelism: 16
+    duration: 30 # max duration of leader lease without renew
+    grace: 20 # interval to renew lease lock
+  scheduleParallelism: 16 # max number of ScheduleTrigger tasks running in parallel
+  webhooksParallelism: 16 # max number of WebhookTrigger tasks running in parallel
   secretsCacheTime: 60 # seconds
-  # emptyDir volume will be created
+  # This folder is used to make git clones by controller within controller's container
+  # So, `emptyDir` volume will be created
   sourceCloneFolder:
     mountPath: /tmp/git-events-runner
     volumeName: temp-repo-data
 
+# Dynamic controllers config, controller reloads it on case of changes.
+# There are all default values, so you can remove everything
+# but redefine values you need to change only.
+# See controllers documentation for details: https://alex-karpenko.github.io/git-events-runner/guides/config/
 runtimeConfig:
   trigger:
     webhook:
