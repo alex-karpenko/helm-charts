@@ -35,7 +35,6 @@ rules:
       - get
 
 {{- if .Values.rbac.actionJobServiceAccounts.createRoleBindings }}
-{{- if .Values.actionJobServiceAccounts.namespaces }}
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
@@ -48,14 +47,13 @@ roleRef:
   kind: ClusterRole
   name: {{ include "git-events-runner.fullname" . }}-cluster-action-jobs
 subjects:
-{{- range .Values.actionJobServiceAccounts.namespaces }}
+{{- range append .Values.actionJobServiceAccounts.namespaces .Release.Namespace }}
   - kind: ServiceAccount
     name: {{ include "git-events-runner.actionJobServiceAccountName" $ }}
     namespace: {{ . }}
 {{- end }}
-{{- end }}
 
-{{- range .Values.actionJobServiceAccounts.namespaces }}
+{{- range append .Values.actionJobServiceAccounts.namespaces .Release.Namespace }}
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
