@@ -1,0 +1,94 @@
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  name: clusteractions.git-events-runner.rs
+spec:
+  group: git-events-runner.rs
+  names:
+    categories: []
+    kind: ClusterAction
+    plural: clusteractions
+    shortNames: []
+    singular: clusteraction
+  scope: Cluster
+  versions:
+    - additionalPrinterColumns: []
+      name: v1alpha1
+      schema:
+        openAPIV3Schema:
+          description: ClusterAction custom resource definition
+          properties:
+            spec:
+              properties:
+                actionJob:
+                  default:
+                    enableClonerDebug: false
+                    preserveGitFolder: false
+                  properties:
+                    actionImage:
+                      nullable: true
+                      type: string
+                    args:
+                      items:
+                        type: string
+                      nullable: true
+                      type: array
+                    clonerImage:
+                      nullable: true
+                      type: string
+                    command:
+                      items:
+                        type: string
+                      nullable: true
+                      type: array
+                    enableClonerDebug:
+                      default: false
+                      type: boolean
+                    preserveGitFolder:
+                      default: false
+                      type: boolean
+                    serviceAccount:
+                      nullable: true
+                      type: string
+                    workdir:
+                      nullable: true
+                      type: string
+                  type: object
+                sourceOverride:
+                  nullable: true
+                  properties:
+                    kind:
+                      enum:
+                        - ClusterGitRepo
+                      type: string
+                    name:
+                      type: string
+                    reference:
+                      oneOf:
+                        - required:
+                            - branch
+                        - required:
+                            - tag
+                        - required:
+                            - commit
+                      properties:
+                        branch:
+                          type: string
+                        commit:
+                          type: string
+                        tag:
+                          type: string
+                      type: object
+                  required:
+                    - kind
+                    - name
+                    - reference
+                  type: object
+              type: object
+          required:
+            - spec
+          title: ClusterAction
+          type: object
+      served: true
+      storage: true
+      subresources: {}
