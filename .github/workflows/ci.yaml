@@ -10,6 +10,14 @@ jobs:
       - name: Prepare git-events-runner CRDs
         run: charts/git-events-runner/prepare-crds.sh
 
+      - name: Check for CRDs consistency
+        run: |
+          if [[ $(git status -s) != "" ]]; then
+            echo Some CRD manifests are inconsistent with App version
+            git status -s
+            exit 1
+          fi
+
       - name: Lint helm charts
         run: |
           for c in `ls charts`; do

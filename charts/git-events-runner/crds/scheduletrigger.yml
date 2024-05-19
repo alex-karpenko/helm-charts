@@ -1,0 +1,146 @@
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  name: scheduletriggers.git-events-runner.rs
+spec:
+  group: git-events-runner.rs
+  names:
+    categories: []
+    kind: ScheduleTrigger
+    plural: scheduletriggers
+    shortNames: []
+    singular: scheduletrigger
+  scope: Namespaced
+  versions:
+    - additionalPrinterColumns:
+        - description: current trigger state
+          jsonPath: .status.state
+          name: State
+          type: string
+        - description: time of last trigger run
+          format: date-time
+          jsonPath: .status.lastRun
+          name: Last Run
+          type: date
+      name: v1alpha1
+      schema:
+        openAPIV3Schema:
+          description: ScheduleTrigger custom resource definition
+          properties:
+            spec:
+              properties:
+                action:
+                  properties:
+                    kind:
+                      enum:
+                        - Action
+                        - ClusterAction
+                      type: string
+                    name:
+                      type: string
+                  required:
+                    - kind
+                    - name
+                  type: object
+                schedule:
+                  oneOf:
+                    - required:
+                        - interval
+                    - required:
+                        - cron
+                  properties:
+                    cron:
+                      type: string
+                    interval:
+                      type: string
+                  type: object
+                sources:
+                  properties:
+                    kind:
+                      default: GitRepo
+                      enum:
+                        - GitRepo
+                        - ClusterGitRepo
+                      type: string
+                    names:
+                      items:
+                        type: string
+                      type: array
+                    watchOn:
+                      default:
+                        onChangeOnly: true
+                        reference:
+                          branch: main
+                      properties:
+                        file:
+                          nullable: true
+                          type: string
+                        onChangeOnly:
+                          type: boolean
+                        reference:
+                          default:
+                            branch: main
+                          oneOf:
+                            - required:
+                                - branch
+                            - required:
+                                - tag
+                            - required:
+                                - commit
+                          properties:
+                            branch:
+                              type: string
+                            commit:
+                              type: string
+                            tag:
+                              type: string
+                          type: object
+                      required:
+                        - onChangeOnly
+                      type: object
+                  required:
+                    - names
+                  type: object
+              required:
+                - action
+                - schedule
+                - sources
+              type: object
+            status:
+              nullable: true
+              properties:
+                checkedSources:
+                  additionalProperties:
+                    properties:
+                      changed:
+                        nullable: true
+                        type: string
+                      commitHash:
+                        nullable: true
+                        type: string
+                      fileHash:
+                        nullable: true
+                        type: string
+                    type: object
+                  type: object
+                lastRun:
+                  nullable: true
+                  type: string
+                state:
+                  enum:
+                    - Idle
+                    - Running
+                    - WrongConfig
+                  type: string
+              required:
+                - checkedSources
+                - state
+              type: object
+          required:
+            - spec
+          title: ScheduleTrigger
+          type: object
+      served: true
+      storage: true
+      subresources:
+        status: {}

@@ -1,0 +1,105 @@
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  name: gitrepos.git-events-runner.rs
+spec:
+  group: git-events-runner.rs
+  names:
+    categories: []
+    kind: GitRepo
+    plural: gitrepos
+    shortNames: []
+    singular: gitrepo
+  scope: Namespaced
+  versions:
+    - additionalPrinterColumns: []
+      name: v1alpha1
+      schema:
+        openAPIV3Schema:
+          description: GitRepo custom resource definition
+          properties:
+            spec:
+              properties:
+                authConfig:
+                  nullable: true
+                  properties:
+                    keys:
+                      default:
+                        password: password
+                        privateKey: ssh-privatekey
+                        token: token
+                        username: username
+                      properties:
+                        password:
+                          type: string
+                        privateKey:
+                          type: string
+                        token:
+                          type: string
+                        username:
+                          type: string
+                      required:
+                        - password
+                        - privateKey
+                        - token
+                        - username
+                      type: object
+                    secretRef:
+                      properties:
+                        name:
+                          type: string
+                        namespace:
+                          nullable: true
+                          type: string
+                      required:
+                        - name
+                      type: object
+                    type:
+                      enum:
+                        - basic
+                        - token
+                        - ssh
+                      type: string
+                  required:
+                    - secretRef
+                    - type
+                  type: object
+                repoUri:
+                  pattern: ^git@[\w.-]+:[\w.-]+/[/\w.-]+$|^ssh://([\w.-]+@)?[\w.-]+(:[\d]{1,5})?(/([/\w.-]+)?)?$|^https?://[\w.-]+(:[\d]{1,5})?(/([/%&=\?\w.-]+)?)?$
+                  type: string
+                tlsConfig:
+                  nullable: true
+                  properties:
+                    caCert:
+                      nullable: true
+                      properties:
+                        key:
+                          default: ca.crt
+                          type: string
+                        secretRef:
+                          properties:
+                            name:
+                              type: string
+                            namespace:
+                              nullable: true
+                              type: string
+                          required:
+                            - name
+                          type: object
+                      required:
+                        - secretRef
+                      type: object
+                    noVerifySsl:
+                      default: false
+                      type: boolean
+                  type: object
+              required:
+                - repoUri
+              type: object
+          required:
+            - spec
+          title: GitRepo
+          type: object
+      served: true
+      storage: true
+      subresources: {}
