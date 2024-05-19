@@ -14,6 +14,8 @@ jobs:
         run: |
           if [[ $(git status -s) != "" ]]; then
             echo Some CRD manifests are inconsistent with App version
+            echo Please run prepare-crds.sh and commit changes
+            echo ""
             git status -s
             exit 1
           fi
