@@ -20,3 +20,5 @@ runtimeConfig:
     containers:
       cloner:
         image: gitrepo-cloner:local
+      worker:
+        image: action-worker:local
