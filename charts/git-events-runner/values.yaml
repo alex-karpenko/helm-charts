@@ -181,15 +181,12 @@ controllerOptions:
 # but redefine values you need to change only.
 # See controllers documentation for details: https://alex-karpenko.github.io/git-events-runner/guides/config/
 runtimeConfig:
-  trigger:
-    webhook:
-      defaultAuthHeader: x-trigger-auth
   action:
-    ttlSecondsAfterFinished: 7200
-    defaultServiceAccount: '{{ include "git-events-runner.actionJobServiceAccountName" . }}'
     workdir:
       mountPath: /action_workdir
       volumeName: action-workdir
+    defaultServiceAccount: '{{ include "git-events-runner.actionJobServiceAccountName" . }}'
+    ttlSecondsAfterFinished: 7200
     containers:
       cloner:
         name: action-cloner
@@ -198,3 +195,6 @@ runtimeConfig:
         name: action-worker
         image: ghcr.io/alex-karpenko/git-events-runner/action-worker:{{ .Chart.AppVersion }}
         variablesPrefix: ACTION_JOB_
+  trigger:
+    webhook:
+      defaultAuthHeader: x-trigger-auth

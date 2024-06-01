@@ -5,7 +5,7 @@ jobs:
   helm-lint:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: Prepare git-events-runner CRDs
         run: charts/git-events-runner/prepare-crds.sh
@@ -20,6 +20,11 @@ jobs:
             echo Please run prepare-crds.sh and commit changes
             exit 1
           fi
+
+      - name: Check git-events-runner default config
+        run: charts/git-events-runner/verify-config.sh
+        env:
+          WORKSPACE: ${{ github.workspace }}
 
       - name: Lint helm charts
         run: |
