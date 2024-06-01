@@ -1,5 +1,5 @@
 {{- if .Values.actionJobServiceAccounts.create }}
-{{- range append .Values.actionJobServiceAccounts.namespaces .Release.Namespace -}}
+{{- range append .Values.actionJobServiceAccounts.namespaces (.Values.controllerNamespace | default .Release.Namespace) }}
 ---
 apiVersion: v1
 kind: ServiceAccount
