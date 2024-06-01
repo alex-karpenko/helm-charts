@@ -25,6 +25,7 @@ apiVersion: rbac.authorization.k8s.io/v1
 kind: Role
 metadata:
   name: {{ include "git-events-runner.fullname" . }}-controller
+  namespace: {{ .Values.controllerNamespace | default .Release.Namespace }}
   labels:
     {{- include "git-events-runner.labels" . | nindent 4 }}
 rules:
@@ -61,6 +62,7 @@ apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
 metadata:
   name: {{ include "git-events-runner.fullname" . }}-controller
+  namespace: {{ .Values.controllerNamespace | default .Release.Namespace }}
   labels:
     {{- include "git-events-runner.labels" . | nindent 4 }}
 roleRef:
@@ -70,12 +72,13 @@ roleRef:
 subjects:
   - kind: ServiceAccount
     name: {{ include "git-events-runner.serviceAccountName" . }}
-    namespace: {{ .Release.Namespace }}
+    namespace: {{ .Values.controllerNamespace | default .Release.Namespace }}
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
 metadata:
   name: {{ include "git-events-runner.fullname" . }}-controller-cluster
+  namespace: {{ .Values.controllerNamespace | default .Release.Namespace }}
   labels:
     {{- include "git-events-runner.labels" . | nindent 4 }}
 roleRef:
@@ -85,7 +88,7 @@ roleRef:
 subjects:
   - kind: ServiceAccount
     name: {{ include "git-events-runner.serviceAccountName" . }}
-    namespace: {{ .Release.Namespace }}
+    namespace: {{ .Values.controllerNamespace | default .Release.Namespace }}
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
@@ -100,7 +103,7 @@ roleRef:
 subjects:
   - kind: ServiceAccount
     name: {{ include "git-events-runner.serviceAccountName" . }}
-    namespace: {{ .Release.Namespace }}
+    namespace: {{ .Values.controllerNamespace | default .Release.Namespace }}
 
 {{- if .Values.rbac.controller.secretsNamespaces }}
 ---
@@ -135,7 +138,7 @@ roleRef:
 subjects:
   - kind: ServiceAccount
     name: {{ include "git-events-runner.serviceAccountName" . }}
-    namespace: {{ .Release.Namespace }}
+    namespace: {{ .Values.controllerNamespace | default .Release.Namespace }}
 {{- else }}
 {{/*
 Allow per-namespace access top secrets
@@ -156,7 +159,7 @@ roleRef:
 subjects:
   - kind: ServiceAccount
     name: {{ include "git-events-runner.serviceAccountName" $ }}
-    namespace: {{ $.Release.Namespace }}
+    namespace: {{ $.Values.controllerNamespace | default $.Release.Namespace }}
 {{- end }}
 {{- end }}
 {{- end }}
@@ -194,7 +197,7 @@ roleRef:
 subjects:
   - kind: ServiceAccount
     name: {{ include "git-events-runner.serviceAccountName" . }}
-    namespace: {{ .Release.Namespace }}
+    namespace: {{ .Values.controllerNamespace | default .Release.Namespace }}
 {{- else }}
 {{/*
 Allow per-namespace access top secrets
@@ -215,7 +218,7 @@ roleRef:
 subjects:
   - kind: ServiceAccount
     name: {{ include "git-events-runner.serviceAccountName" $ }}
-    namespace: {{ $.Release.Namespace }}
+    namespace: {{ $.Values.controllerNamespace | default $.Release.Namespace }}
 {{- end }}
 {{- end }}
 {{- end }}

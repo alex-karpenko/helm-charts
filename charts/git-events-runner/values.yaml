@@ -1,6 +1,17 @@
-# Default values for git-events-runner.
-# This is a YAML-formatted file.
-# Declare variables to be passed into your templates.
+# ATTENTION! ATTENTION! ATTENTION! ATTENTION! ATTENTION! ATTENTION! ATTENTION!
+#
+# If you're going to deploy custom resources, services accounts and RBAC resources
+# to the different namespaces (like controller to git-events-runner,
+# but custom resources to several tenant namespaces), using serviceAccount,
+# actionJobServiceAccounts, rbac section below,
+# then you shouldn't use --namespace command line parameter
+# but use this namespace value instead.
+#
+# Uncomment following two lines if you need multi-namespace installation,
+# and change values according to yours needs.
+#
+# controllerNamespace: git-events-runner
+# createNamespace: false
 
 replicaCount: 1
 

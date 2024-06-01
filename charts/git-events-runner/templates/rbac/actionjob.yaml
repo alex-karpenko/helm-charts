@@ -47,13 +47,13 @@ roleRef:
   kind: ClusterRole
   name: {{ include "git-events-runner.fullname" . }}-cluster-action-jobs
 subjects:
-{{- range append .Values.actionJobServiceAccounts.namespaces .Release.Namespace }}
+{{- range append .Values.actionJobServiceAccounts.namespaces (.Values.controllerNamespace | default .Release.Namespace) }}
   - kind: ServiceAccount
     name: {{ include "git-events-runner.actionJobServiceAccountName" $ }}
     namespace: {{ . }}
 {{- end }}
 
-{{- range append .Values.actionJobServiceAccounts.namespaces .Release.Namespace }}
+{{- range append .Values.actionJobServiceAccounts.namespaces (.Values.controllerNamespace | default .Release.Namespace) }}
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
