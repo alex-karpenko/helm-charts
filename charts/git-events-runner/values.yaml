@@ -183,8 +183,8 @@ controllerOptions:
 runtimeConfig:
   action:
     workdir:
-      volumeName: action-workdir
       mountPath: /action_workdir
+      volumeName: action-workdir
     defaultServiceAccount: '{{ include "git-events-runner.actionJobServiceAccountName" . }}'
     ttlSecondsAfterFinished: 7200
     containers:
