@@ -1,5 +1,6 @@
 {{- if .Values.actionJobServiceAccounts.create }}
 {{- range append .Values.actionJobServiceAccounts.namespaces .Release.Namespace -}}
+---
 apiVersion: v1
 kind: ServiceAccount
 metadata:
