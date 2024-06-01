@@ -23,6 +23,8 @@ jobs:
 
       - name: Check git-events-runner default config
         run: charts/git-events-runner/verify-config.sh
+        env:
+          WORKSPACE: ${{ github.workspace }}
 
       - name: Lint helm charts
         run: |
