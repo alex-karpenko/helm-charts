@@ -60,9 +60,11 @@ spec:
                         reference:
                           branch: main
                       properties:
-                        file:
+                        files:
+                          items:
+                            type: string
                           nullable: true
-                          type: string
+                          type: array
                         onChangeOnly:
                           type: boolean
                         reference:
