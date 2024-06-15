@@ -55,10 +55,12 @@ spec:
             - {{ .Values.controllerOptions.leaderLease.duration | default 30 | quote }}
             - --leader-lease-grace
             - {{ .Values.controllerOptions.leaderLease.grace | default 20 | quote }}
-            {{- if eq .Values.controllerOptions.logLevel "debug" }}
-            - --debug
-            {{- else if eq .Values.controllerOptions.logLevel "info" }}
-            - --verbose
+          env:
+            - name: RUST_LOG
+              value: {{ .Values.controllerOptions.logLevel | default "info" | quote }}
+            {{- if .Values.controllerOptions.otlp.enabled }}
+            - name: OPENTELEMETRY_ENDPOINT_URL
+              value: {{ .Values.controllerOptions.otlp.endpoint | quote }}
             {{- end }}
           securityContext:
             {{- toYaml .Values.securityContext | nindent 12 }}

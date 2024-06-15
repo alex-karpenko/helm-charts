@@ -175,6 +175,9 @@ affinity: {}
 # Static (command line) options of the controller
 controllerOptions:
   logLevel: info # or debug. Empty means warning level
+  otlp:
+    enabled: false
+    endpoint: http://localhost:4317
   leaderLease:
     duration: 30 # max duration of leader lease without renew
     grace: 20 # interval to renew lease lock
@@ -193,11 +196,14 @@ controllerOptions:
 # See controllers documentation for details: https://alex-karpenko.github.io/git-events-runner/guides/config/
 runtimeConfig:
   action:
+    maxRunningJobs: 16
+    jobWaitingTimeoutSeconds: 300
+    defaultServiceAccount: '{{ include "git-events-runner.actionJobServiceAccountName" . }}'
+    activeDeadlineSeconds: 3600
+    ttlSecondsAfterFinished: 7200
     workdir:
       mountPath: /action_workdir
       volumeName: action-workdir
-    defaultServiceAccount: '{{ include "git-events-runner.actionJobServiceAccountName" . }}'
-    ttlSecondsAfterFinished: 7200
     containers:
       cloner:
         name: action-cloner
