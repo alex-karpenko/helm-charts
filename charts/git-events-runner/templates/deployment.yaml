@@ -55,6 +55,8 @@ spec:
             - {{ .Values.controllerOptions.leaderLease.duration | default 30 | quote }}
             - --leader-lease-grace
             - {{ .Values.controllerOptions.leaderLease.grace | default 20 | quote }}
+            - --metrics-prefix
+            - {{ .Values.controllerOptions.metricsPrefix | default "git_events_runner" | quote }}
           env:
             - name: RUST_LOG
               value: {{ .Values.controllerOptions.logLevel | default "info" | quote }}
