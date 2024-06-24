@@ -175,6 +175,7 @@ affinity: {}
 # Static (command line) options of the controller
 controllerOptions:
   logLevel: info # or debug. Empty means warning level
+  metricsPrefix: git_events_runner # this is default value
   otlp:
     enabled: false
     endpoint: http://localhost:4317
