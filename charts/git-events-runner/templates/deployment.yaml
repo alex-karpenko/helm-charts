@@ -15,7 +15,7 @@ spec:
   template:
     metadata:
       annotations:
-        {{- if .Values.prometheus.serviceAnnotations }}
+        {{- if .Values.prometheus.pdoAnnotations }}
         prometheus.io/port: {{ .Values.service.utility.port | quote }}
         prometheus.io/scheme: http
         prometheus.io/path: /metrics
