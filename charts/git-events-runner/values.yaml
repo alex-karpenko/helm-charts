@@ -172,6 +172,13 @@ tolerations: []
 
 affinity: {}
 
+# How to expose metrics to Prometheus
+prometheus:
+  serviceAnnotations: true # Prometheus annotations should be added to service
+  serviceMonitor: # or create ServiceMonitor resource for prometheus-operator
+    enabled: false
+    interval: 30s
+
 # Static (command line) options of the controller
 controllerOptions:
   logLevel: info # or debug. Empty means warning level

@@ -1,0 +1,23 @@
+{{- if .Values.prometheus.serviceMonitor.enabled }}
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: {{ include "git-events-runner.fullname" . }}
+  labels:
+    {{- include "git-events-runner.labels" . | nindent 4 }}
+spec:
+  endpoints:
+  - path: /metrics
+    port: utility
+    scheme: http
+    interval: {{ .Values.prometheus.serviceMonitor.interval }}
+    honorLabels: true
+    honorTimestamps: true
+  jobLabel: app.kubernetes.io/name
+  namespaceSelector:
+    matchNames:
+      - {{ .Release.Namespace }}
+  selector:
+    matchLabels:
+      {{- include "git-events-runner.selectorLabels" . | nindent 6 }}
+{{- end }}
