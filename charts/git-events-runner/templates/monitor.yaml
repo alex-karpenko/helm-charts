@@ -1,0 +1,24 @@
+{{- if .Values.prometheus.podMonitor.enabled }}
+apiVersion: monitoring.coreos.com/v1
+kind: PodMonitor
+metadata:
+  name: {{ include "git-events-runner.fullname" . }}
+  labels:
+    {{- include "git-events-runner.labels" . | nindent 4 }}
+spec:
+  podMetricsEndpoints:
+  - path: /metrics
+    port: utility
+    scheme: http
+    interval: {{ .Values.prometheus.podMonitor.interval }}
+    honorLabels: true
+    honorTimestamps: true
+  jobLabel: app.kubernetes.io/name
+  podTargetLabels: []
+  namespaceSelector:
+    matchNames:
+      - {{ .Release.Namespace }}
+  selector:
+    matchLabels:
+      {{- include "git-events-runner.selectorLabels" . | nindent 6 }}
+{{- end }}

@@ -172,6 +172,13 @@ tolerations: []
 
 affinity: {}
 
+# How to expose metrics to Prometheus
+prometheus:
+  podAnnotations: true # Prometheus annotations should be added to Pods
+  podMonitor: # or create PodMonitor resource for prometheus-operator
+    enabled: false
+    interval: 30s
+
 # Static (command line) options of the controller
 controllerOptions:
   logLevel: info # or debug. Empty means warning level
