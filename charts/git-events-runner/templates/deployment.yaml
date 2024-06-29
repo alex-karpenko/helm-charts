@@ -60,7 +60,7 @@ spec:
             - --leader-lease-duration
             - {{ .Values.controllerOptions.leaderLease.duration | default 30 | quote }}
             - --leader-lease-grace
-            - {{ .Values.controllerOptions.leaderLease.grace | default 20 | quote }}
+            - {{ .Values.controllerOptions.leaderLease.grace | default 5 | quote }}
             - --metrics-prefix
             - {{ .Values.controllerOptions.metricsPrefix | default "git_events_runner" | quote }}
           env:
