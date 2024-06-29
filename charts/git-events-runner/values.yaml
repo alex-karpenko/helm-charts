@@ -188,7 +188,7 @@ controllerOptions:
     endpoint: http://localhost:4317
   leaderLease:
     duration: 30 # max duration of leader lease without renew
-    grace: 20 # interval to renew lease lock
+    grace: 5 # seconds before lock expires to renew it
   scheduleParallelism: 16 # max number of ScheduleTrigger tasks running in parallel
   webhooksParallelism: 16 # max number of WebhookTrigger tasks running in parallel
   secretsCacheTime: 60 # seconds
