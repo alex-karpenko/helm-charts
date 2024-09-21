@@ -19,11 +19,13 @@ spec:
           description: Action custom resource definition
           properties:
             spec:
+              description: Action CRD spec section
               properties:
                 actionJob:
                   default:
                     enableClonerDebug: false
                     preserveGitFolder: false
+                  description: Action Job config section
                   properties:
                     actionImage:
                       nullable: true
@@ -568,9 +570,11 @@ spec:
                       type: string
                   type: object
                 sourceOverride:
+                  description: Action source override section
                   nullable: true
                   properties:
                     kind:
+                      description: Allowed kinds of the sources
                       enum:
                         - GitRepo
                         - ClusterGitRepo
@@ -578,6 +582,7 @@ spec:
                     name:
                       type: string
                     reference:
+                      description: Kinds of the references
                       oneOf:
                         - required:
                             - branch
@@ -587,10 +592,13 @@ spec:
                             - commit
                       properties:
                         branch:
+                          description: Use branch
                           type: string
                         commit:
+                          description: Use particular commit hash
                           type: string
                         tag:
+                          description: Ise tag
                           type: string
                       type: object
                   required:

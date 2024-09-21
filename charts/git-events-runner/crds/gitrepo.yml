@@ -19,8 +19,10 @@ spec:
           description: GitRepo custom resource definition
           properties:
             spec:
+              description: GitRepo CRD spec section
               properties:
                 authConfig:
+                  description: Auth config section
                   nullable: true
                   properties:
                     keys:
@@ -29,6 +31,7 @@ spec:
                         privateKey: ssh-privatekey
                         token: token
                         username: username
+                      description: Keys in the secret data section for different auth parameters
                       properties:
                         password:
                           type: string
@@ -45,6 +48,7 @@ spec:
                         - username
                       type: object
                     secretRef:
+                      description: Reference to the secret
                       properties:
                         name:
                           type: string
@@ -55,6 +59,7 @@ spec:
                         - name
                       type: object
                     type:
+                      description: Repos' type of the authentication
                       enum:
                         - basic
                         - token
@@ -65,18 +70,22 @@ spec:
                     - type
                   type: object
                 repoUri:
+                  description: Full URI of the repo
                   pattern: ^git@[\w.-]+:[\w.-]+/[/\w.-]+$|^ssh://([\w.-]+@)?[\w.-]+(:[\d]{1,5})?(/([/\w.-]+)?)?$|^https?://[\w.-]+(:[\d]{1,5})?(/([/%&=\?\w.-]+)?)?$
                   type: string
                 tlsConfig:
+                  description: TLS config section
                   nullable: true
                   properties:
                     caCert:
+                      description: Repo custom TLS CA config
                       nullable: true
                       properties:
                         key:
                           default: ca.crt
                           type: string
                         secretRef:
+                          description: Reference to the secret
                           properties:
                             name:
                               type: string
