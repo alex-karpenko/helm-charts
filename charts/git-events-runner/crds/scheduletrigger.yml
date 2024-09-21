@@ -28,10 +28,13 @@ spec:
           description: ScheduleTrigger custom resource definition
           properties:
             spec:
+              description: Schedule trigger spec section
               properties:
                 action:
+                  description: Reference to the action to run from the trigger
                   properties:
                     kind:
+                      description: Allowed action kinds
                       enum:
                         - Action
                         - ClusterAction
@@ -43,6 +46,7 @@ spec:
                     - name
                   type: object
                 schedule:
+                  description: Type of the schedule
                   oneOf:
                     - required:
                         - interval
@@ -50,14 +54,18 @@ spec:
                         - cron
                   properties:
                     cron:
+                      description: Cron schedule
                       type: string
                     interval:
+                      description: Interval type
                       type: string
                   type: object
                 sources:
+                  description: Kind and list of the triggers' sources
                   properties:
                     kind:
                       default: GitRepo
+                      description: Allowed kinds of the sources
                       enum:
                         - GitRepo
                         - ClusterGitRepo
@@ -71,17 +79,21 @@ spec:
                         onChangeOnly: true
                         reference:
                           branch: main
+                      description: Trigger watching config
                       properties:
                         files:
+                          description: '`gitignore`-like files specification to calculate hash'
                           items:
                             type: string
                           nullable: true
                           type: array
                         onChangeOnly:
+                          description: '`true`: run action if repo was changed only `false`: run action every time trigger fire'
                           type: boolean
                         reference:
                           default:
                             branch: main
+                          description: Which reference should be checked?
                           oneOf:
                             - required:
                                 - branch
@@ -91,10 +103,13 @@ spec:
                                 - commit
                           properties:
                             branch:
+                              description: Use branch
                               type: string
                             commit:
+                              description: Use particular commit hash
                               type: string
                             tag:
+                              description: Ise tag
                               type: string
                           type: object
                       required:
@@ -109,26 +124,34 @@ spec:
                 - sources
               type: object
             status:
+              description: Trigger status section
               nullable: true
               properties:
                 checkedSources:
                   additionalProperties:
+                    description: Result of checking of each source in the trigger
                     properties:
                       changed:
+                        description: Timestamp of the last change of the source content
                         nullable: true
                         type: string
                       commitHash:
+                        description: Last verified commit
                         nullable: true
                         type: string
                       fileHash:
+                        description: Last verified has of the files (if present0)
                         nullable: true
                         type: string
                     type: object
+                  description: Result of each source run
                   type: object
                 lastRun:
+                  description: Timestamp of the last run
                   nullable: true
                   type: string
                 state:
+                  description: 'State: idle, running, ...'
                   enum:
                     - Idle
                     - Running
