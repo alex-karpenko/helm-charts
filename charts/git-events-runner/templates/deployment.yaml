@@ -63,6 +63,32 @@ spec:
             - {{ .Values.controllerOptions.leaderLease.grace | default 5 | quote }}
             - --metrics-prefix
             - {{ .Values.controllerOptions.metricsPrefix | default "git_events_runner" | quote }}
+            {{- if .Values.controllerOptions.webhooksRateLimits.global }}
+            - --hooks-rrl-global
+            - {{ .Values.controllerOptions.webhooksRateLimits.global | quote }}
+            {{- end }}
+            {{- if .Values.controllerOptions.webhooksRateLimits.trigger }}
+            - --hooks-rrl-trigger
+            - {{ .Values.controllerOptions.webhooksRateLimits.trigger | quote }}
+            {{- end }}
+            {{- if .Values.controllerOptions.webhooksRateLimits.source }}
+            - --hooks-rrl-source
+            - {{ .Values.controllerOptions.webhooksRateLimits.source | quote }}
+            {{- end }}
+            {{- if or .Values.controllerOptions.webhooksTls.certPath .Values.controllerOptions.webhooksTls.keyPath }}
+            - --tls-cert-path
+            - {{ .Values.controllerOptions.webhooksTls.certPath | quote }}
+            - --tls-key-path
+            - {{ .Values.controllerOptions.webhooksTls.keyPath | quote }}
+            {{- end }}
+            {{- if .Values.controllerOptions.webhooksTls.secretName }}
+            - --tls-secret-name
+            - {{ .Values.controllerOptions.webhooksTls.secretName | quote }}
+            {{- end }}
+            {{- if .Values.controllerOptions.webhooksTls.secretNamespace }}
+            - --tls-secret-namespace
+            - {{ .Values.controllerOptions.webhooksTls.secretNamespace | quote }}
+            {{- end }}
           env:
             - name: RUST_LOG
               value: {{ .Values.controllerOptions.logLevel | default "info" | quote }}

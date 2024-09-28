@@ -191,6 +191,23 @@ controllerOptions:
     grace: 5 # seconds before lock expires to renew it
   scheduleParallelism: 16 # max number of ScheduleTrigger tasks running in parallel
   webhooksParallelism: 16 # max number of WebhookTrigger tasks running in parallel
+  # Defines hooks rate limits, empty value means no limits (default)
+  # Limits value should be in the "burst/seconds" format, where
+  # burst is a number of requests allowed per period and size of the burst bucket at the same time.
+  webhooksRateLimits:
+    global: "" # i.e. "60/60"
+    trigger: "" # i.e. "1/5"
+    source: "" # i.e. "1/10"
+  # Defines optional webhooks listener TLS config
+  # Webhooks server doesn't use TLS by default (if this config is empty)
+  webhooksTls:
+    # Use certificate/key pair to specify path to files inside a controllers' pod.
+    # You may files inside image, or use volume mounted from Secret(s) or in other possible way.
+    certPath: ""
+    keyPath: ""
+    # Use existing secret of "tls" type with certificate/key pair.
+    secretName: ""
+    secretNamespace: "" # if namespace is empty, controllers' namespace will be used.
   secretsCacheTime: 60 # seconds
   # This folder is used to make git clones by controller within controller's container
   # So, `emptyDir` volume will be created
