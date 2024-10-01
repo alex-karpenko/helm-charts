@@ -182,6 +182,7 @@ prometheus:
 # Static (command line) options of the controller
 controllerOptions:
   logLevel: info # or debug. Empty means warning level
+  jsonLogs: false # output logs in JSON format if true
   metricsPrefix: git_events_runner # this is default value
   otlp:
     enabled: false

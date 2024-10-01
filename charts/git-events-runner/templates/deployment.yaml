@@ -89,6 +89,9 @@ spec:
             - --tls-secret-namespace
             - {{ .Values.controllerOptions.webhooksTls.secretNamespace | quote }}
             {{- end }}
+            {{- if .Values.controllerOptions.jsonLogs }}
+            - --json-logs
+            {{- end }}
           env:
             - name: RUST_LOG
               value: {{ .Values.controllerOptions.logLevel | default "info" | quote }}
