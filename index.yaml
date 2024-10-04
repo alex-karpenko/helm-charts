@@ -334,6 +334,16 @@ entries:
     version: 0.1.0
   psql-query-exporter:
   - apiVersion: v2
+    appVersion: v0.2.23
+    created: "2024-10-04T18:05:58.898829252Z"
+    description: psql-query-exporter Helm chart
+    digest: e2f0b7ec56482338d75c9d050472966ada289a7e6437d8567d8321109a047f4f
+    name: psql-query-exporter
+    type: application
+    urls:
+    - https://github.com/alex-karpenko/helm-charts/releases/download/psql-query-exporter-0.4.16/psql-query-exporter-0.4.16.tgz
+    version: 0.4.16
+  - apiVersion: v2
     appVersion: v0.2.22
     created: "2024-08-06T18:54:21.602988527Z"
     description: psql-query-exporter Helm chart
@@ -533,4 +543,4 @@ entries:
     urls:
     - https://github.com/alex-karpenko/helm-charts/releases/download/psql-query-exporter-0.3.0/psql-query-exporter-0.3.0.tgz
     version: 0.3.0
-generated: "2024-10-01T17:28:25.38321511Z"
+generated: "2024-10-04T18:05:58.899119016Z"
