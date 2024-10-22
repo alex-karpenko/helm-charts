@@ -193,6 +193,16 @@ entries:
     version: 0.0.16
   http-dragonfly:
   - apiVersion: v2
+    appVersion: v0.3.2
+    created: "2024-10-22T17:44:14.102611345Z"
+    description: http-dragonfly Helm chart
+    digest: 1127b21a1fe4bebccb36a8aa6b7c7c5fab337b694f6e960e606ac1529c652608
+    name: http-dragonfly
+    type: application
+    urls:
+    - https://github.com/alex-karpenko/helm-charts/releases/download/http-dragonfly-0.3.2/http-dragonfly-0.3.2.tgz
+    version: 0.3.2
+  - apiVersion: v2
     appVersion: v0.3.1
     created: "2024-08-21T19:06:56.029548444Z"
     description: http-dragonfly Helm chart
@@ -343,6 +353,16 @@ entries:
     - https://github.com/alex-karpenko/helm-charts/releases/download/http-dragonfly-0.1.0/http-dragonfly-0.1.0.tgz
     version: 0.1.0
   psql-query-exporter:
+  - apiVersion: v2
+    appVersion: v0.2.24
+    created: "2024-10-22T17:44:14.204828734Z"
+    description: psql-query-exporter Helm chart
+    digest: 1488e8cf9d7856e930a9c37f9725840993b0cf2d0ef25eae53b0d3f75c1ce166
+    name: psql-query-exporter
+    type: application
+    urls:
+    - https://github.com/alex-karpenko/helm-charts/releases/download/psql-query-exporter-0.4.17/psql-query-exporter-0.4.17.tgz
+    version: 0.4.17
   - apiVersion: v2
     appVersion: v0.2.23
     created: "2024-10-04T18:05:58.898829252Z"
@@ -553,4 +573,4 @@ entries:
     urls:
     - https://github.com/alex-karpenko/helm-charts/releases/download/psql-query-exporter-0.3.0/psql-query-exporter-0.3.0.tgz
     version: 0.3.0
-generated: "2024-10-12T16:35:36.364630504Z"
+generated: "2024-10-22T17:44:14.20515167Z"
