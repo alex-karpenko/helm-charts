@@ -2,6 +2,16 @@ apiVersion: v1
 entries:
   git-events-runner:
   - apiVersion: v2
+    appVersion: v0.4.2
+    created: "2025-03-14T13:24:31.631811998Z"
+    description: K8s operator to run jobs on git repo changes
+    digest: 0d0de6e626309d4431b13dd35c346990c5bce4289045fe3b0b27ece9e698f723
+    name: git-events-runner
+    type: application
+    urls:
+    - https://github.com/alex-karpenko/helm-charts/releases/download/git-events-runner-0.4.2/git-events-runner-0.4.2.tgz
+    version: 0.4.2
+  - apiVersion: v2
     appVersion: v0.4.1
     created: "2025-02-15T15:57:43.744637353Z"
     description: K8s operator to run jobs on git repo changes
@@ -673,4 +683,4 @@ entries:
     urls:
     - https://github.com/alex-karpenko/helm-charts/releases/download/psql-query-exporter-0.3.0/psql-query-exporter-0.3.0.tgz
     version: 0.3.0
-generated: "2025-03-08T07:57:32.90506521Z"
+generated: "2025-03-14T13:24:31.632024508Z"
