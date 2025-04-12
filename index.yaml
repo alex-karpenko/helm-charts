@@ -2,6 +2,16 @@ apiVersion: v1
 entries:
   git-events-runner:
   - apiVersion: v2
+    appVersion: v0.4.4
+    created: "2025-04-12T10:33:24.013850273Z"
+    description: K8s operator to run jobs on git repo changes
+    digest: a0329e853d0508a4e730fd898f6b852ddb26d70ef6f67d6ba90c5263fc5ab6e4
+    name: git-events-runner
+    type: application
+    urls:
+    - https://github.com/alex-karpenko/helm-charts/releases/download/git-events-runner-0.4.4/git-events-runner-0.4.4.tgz
+    version: 0.4.4
+  - apiVersion: v2
     appVersion: v0.4.3
     created: "2025-03-29T19:36:24.133984394Z"
     description: K8s operator to run jobs on git repo changes
@@ -242,6 +252,16 @@ entries:
     - https://github.com/alex-karpenko/helm-charts/releases/download/git-events-runner-0.0.16/git-events-runner-0.0.16.tgz
     version: 0.0.16
   http-dragonfly:
+  - apiVersion: v2
+    appVersion: v0.3.7
+    created: "2025-04-12T10:33:24.191912825Z"
+    description: http-dragonfly Helm chart
+    digest: 6d55269c65e521f720591b1b3a9c9712768f2abbacd11efdede9729b0ee37bca
+    name: http-dragonfly
+    type: application
+    urls:
+    - https://github.com/alex-karpenko/helm-charts/releases/download/http-dragonfly-0.3.7/http-dragonfly-0.3.7.tgz
+    version: 0.3.7
   - apiVersion: v2
     appVersion: v0.3.6
     created: "2025-03-08T07:57:32.904819391Z"
@@ -703,4 +723,4 @@ entries:
     urls:
     - https://github.com/alex-karpenko/helm-charts/releases/download/psql-query-exporter-0.3.0/psql-query-exporter-0.3.0.tgz
     version: 0.3.0
-generated: "2025-03-29T19:36:24.134188001Z"
+generated: "2025-04-12T10:33:24.192850239Z"
