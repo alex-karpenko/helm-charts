@@ -34,13 +34,6 @@ spec:
             {{- if .Values.logJson }}
             - --json-log
             {{- end }}
-            {{- with .Values.logLevel }}
-            {{- if eq "info" . }}
-            - -v
-            {{- else if eq "debug" . }}
-            - -d
-            {{- end }}
-            {{- end }}
           {{- with .Values.secrets }}
           envFrom:
             {{- range . }}
@@ -48,8 +41,10 @@ spec:
                 name: {{ . }}
             {{- end }}
           {{- end }}
-          {{- with .Values.podEnv }}
           env:
+            - name: RUST_LOG
+              value: {{ .Values.logLevel | quote }}
+          {{- with .Values.podEnv }}
             {{- range $k, $v := . }}
             - name: {{ $k }}
               value: {{ $v | quote }}
