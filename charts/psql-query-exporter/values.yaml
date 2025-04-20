@@ -25,10 +25,12 @@ serviceAccount:
 
 podAnnotations: {}
 
-podSecurityContext: {}
+podSecurityContext:
+  {}
   # fsGroup: 2000
 
-securityContext: {}
+securityContext:
+  {}
   # capabilities:
   #   drop:
   #   - ALL
@@ -43,7 +45,8 @@ service:
 ingress:
   enabled: false
   className: ""
-  annotations: {}
+  annotations:
+    {}
     # kubernetes.io/ingress.class: nginx
     # kubernetes.io/tls-acme: "true"
   hosts:
@@ -56,7 +59,8 @@ ingress:
   #    hosts:
   #      - chart-example.local
 
-resources: {}
+resources:
+  {}
   # We usually recommend not to specify default resources and to leave this as a conscious
   # choice for the user. This also increases chances charts run on environments with little
   # resources, such as Minikube. If you do want to specify resources, uncomment the following
@@ -76,12 +80,12 @@ affinity: {}
 
 # Host to expose metrics to Prometheus
 prometheus:
-  serviceAnnotations: true  # Prometheus annotations should be added to service
-  # Add one more service port with this name 
+  serviceAnnotations: true # Prometheus annotations should be added to service
+  # Add one more service port with this name
   # (sometimes prometheus scrape config discovers services with specific suffixes only)
   portName: metrics
 
-  serviceMonitor:       # or create ServiceMonitor resource for prometheus-operator
+  serviceMonitor: # or create ServiceMonitor resource for prometheus-operator
     enabled: false
     interval: 30s
     jobLabel: "" # default is psql-query-exporter
@@ -117,8 +121,10 @@ createConfigMaps: []
 #    mountPath: /ca/aws-ca
 #    name: psql-query-exporter-aws-ca # optional, default is <deployment-full-name>-<folder-name>
 
-# info or debug, anything else - warning
-logLevel: warning
+# Set log level.
+# Allowed values: trace, debug, info, warn, error
+# You can use RUST_LOG variable format here to narrow logs scope, i.e. "psql-query-exporter=debug,tokio=error"
+logLevel: warn
 # Write logs in JSON format if true
 logJson: false
 
@@ -142,7 +148,7 @@ config: {}
 #          queries:
 #            - metric_name: replication_lag
 #              query: |
-#                select slot_name, slot_type, active::text, 
+#                select slot_name, slot_type, active::text,
 #                (case when not pg_is_in_recovery() then pg_current_wal_lsn() - restart_lsn end)::float as lag_bytes
 #                from pg_replication_slots;
 #              values:
