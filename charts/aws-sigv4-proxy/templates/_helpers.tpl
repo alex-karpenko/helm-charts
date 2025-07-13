@@ -31,6 +31,17 @@ Create chart name and version as used by the chart label.
 {{- end }}
 
 {{/*
+Log level environment variable.
+*/}}
+{{- define "aws-sigv4-proxy.logLevel" -}}
+{{- if .Values.config.filterLogs }}
+{{- printf "aws_sigv4_proxy=%s" .Values.config.logLevel }}
+{{- else }}
+{{- printf "%s" .Values.config.logLevel }}
+{{- end }}
+{{- end }}
+
+{{/*
 Common labels
 */}}
 {{- define "aws-sigv4-proxy.labels" -}}

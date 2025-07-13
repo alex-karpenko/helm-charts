@@ -38,11 +38,62 @@ spec:
           securityContext:
             {{- toYaml . | nindent 12 }}
           {{- end }}
-          image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
+          image: "{{ .Values.image.registry }}/{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
+          args:
+            - --forward-to
+            - {{ .Values.config.forwardTo | required "config.forwardTo URL is mandatory" | quote }}
+            - --listen-on
+            - "0.0.0.0:{{ .Values.service.port }}"
+            {{- with .Values.config.serviceName }}
+            - --service
+            - {{ . | quote }}
+            {{- end }}
+            {{- with .Values.config.regionOverride }}
+            - --region
+            - {{ . | quote }}
+            {{- end }}
+            {{- with .Values.config.assumeRole }}
+            - --assume-role
+            - {{ . | quote }}
+            {{- end }}
+            {{- with .Values.config.utilityPort }}
+            - --utility-port
+            - {{ . | quote }}
+            {{- end }}
+            {{- with .Values.config.connectTimeout }}
+            - --connect-timeout
+            - {{ . }}
+            {{- end }}
+            {{- with .Values.config.requestTimeout }}
+            - --request-timeout
+            - {{ . }}
+            {{- end }}
+            {{- with .Values.config.signatureLifetime }}
+            - --signature-lifetime
+            - {{ . }}
+            {{- end }}
+            {{- if .Values.config.noVerifySsl }}
+            - --no-verify-ssl
+            {{- else if .Values.config.rootCa }}
+            - --ca
+            - {{ .Values.config.rootCa | quote }}
+            {{- end }}
+            {{- if or .Values.config.sslCert .Values.config.sslKey }}
+            - --cert
+            - {{ .Values.config.sslCert | required "config.sslCert is required if config.sslKey is specified" | quote }}
+            - --key
+            - {{ .Values.config.sslKey | required "config.sslKey is required if config.sslCert is specified" | quote }}
+            {{- end }}
+          env:
+            - name: RUST_LOG
+              value: {{ include "aws-sigv4-proxy.logLevel" . | quote }}
           ports:
             - name: http
               containerPort: {{ .Values.service.port }}
+              protocol: TCP
+            - name: utility
+              containerPort: {{ .Values.config.utilityPort }}
               protocol: TCP
           {{- with .Values.livenessProbe }}
           livenessProbe:
