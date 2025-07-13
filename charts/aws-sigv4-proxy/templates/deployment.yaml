@@ -63,15 +63,15 @@ spec:
             {{- end }}
             {{- with .Values.config.connectTimeout }}
             - --connect-timeout
-            - {{ . }}
+            - {{ . | quote }}
             {{- end }}
             {{- with .Values.config.requestTimeout }}
             - --request-timeout
-            - {{ . }}
+            - {{ . | quote }}
             {{- end }}
             {{- with .Values.config.signatureLifetime }}
             - --signature-lifetime
-            - {{ . }}
+            - {{ . | quote }}
             {{- end }}
             {{- if .Values.config.noVerifySsl }}
             - --no-verify-ssl
