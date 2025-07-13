@@ -11,5 +11,5 @@ spec:
     - name: wget
       image: busybox
       command: ['wget']
-      args: ['{{ include "aws-sigv4-proxy.fullname" . }}:{{ .Values.service.port }}']
+      args: ['{{ include "aws-sigv4-proxy.fullname" . }}:{{ .Values.config.utilityPort }}']
   restartPolicy: Never

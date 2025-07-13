@@ -7,7 +7,8 @@ replicaCount: 1
 
 # This sets the container image more information can be found here: https://kubernetes.io/docs/concepts/containers/images/
 image:
-  repository: ghcr.io/alex-karpenko/aws-sigv4-proxy
+  registry: ghcr.io
+  repository: alex-karpenko/aws-sigv4-proxy
   # This sets the pull policy for images.
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
@@ -60,7 +61,8 @@ service:
 ingress:
   enabled: false
   className: ""
-  annotations: {}
+  annotations:
+    {}
     # kubernetes.io/ingress.class: nginx
     # kubernetes.io/tls-acme: "true"
   hosts:
@@ -73,7 +75,8 @@ ingress:
   #    hosts:
   #      - chart-example.local
 
-resources: {}
+resources:
+  {}
   # We usually recommend not to specify default resources and to leave this as a conscious
   # choice for the user. This also increases chances charts run on environments with little
   # resources, such as Minikube. If you do want to specify resources, uncomment the following
@@ -89,11 +92,11 @@ resources: {}
 livenessProbe:
   httpGet:
     path: /health
-    port: http
+    port: utility
 readinessProbe:
   httpGet:
     path: /health
-    port: http
+    port: utility
 
 # This section is for setting up autoscaling more information can be found here: https://kubernetes.io/docs/concepts/workloads/autoscaling/
 autoscaling:
@@ -121,3 +124,25 @@ nodeSelector: {}
 tolerations: []
 
 affinity: {}
+
+# Proxy configuration
+config:
+  forwardTo: "" # Mandatory URL of the AWS service to forward requests to
+  serviceName: "" # Optional service name. Specify it if it's impossible to determine service name from he URL
+  regionOverride: "" # Optional service region name, to override region from the AWS config
+  assumeRole: "" # Optional IAM role ARN to sign requests by
+
+  utilityPort: 9090 # Port number for health checks and metrics
+
+  connectTimeout: 10
+  requestTimeout: 30
+  signatureLifetime: "" # optional lifetime of the signature
+
+  rootCa: "" # Path to custom trusted root CA bundle
+  noVerifySsl: false # Disable SSL certificates verification, dangerous!
+
+  sslCert: "" # Path to server SSL certificate
+  sslKey: "" # Path to server SSL private key
+
+  logLevel: info # Possible values are trace, debug, info, warn, error
+  filterLogs: true # Filter out logs from aws-sigv4-proxy anly. If false than all modules will be logging
