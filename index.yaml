@@ -1,757 +1,746 @@
 apiVersion: v1
 entries:
-  aws-sigv4-proxy:
-  - apiVersion: v2
-    appVersion: v0.1.0
-    created: "2025-07-13T09:23:06.002844305Z"
-    description: SigV4 signing proxy to access AWS services.
-    digest: 6502988669d1de5051032761e2e2c94d2d476e86ca1b439f6b7552691485413b
-    name: aws-sigv4-proxy
-    type: application
-    urls:
-    - https://github.com/alex-karpenko/helm-charts/releases/download/aws-sigv4-proxy-0.1.0/aws-sigv4-proxy-0.1.0.tgz
-    version: 0.1.0
   git-events-runner:
-  - apiVersion: v2
-    appVersion: v0.4.5
-    created: "2025-06-21T10:30:43.910455682Z"
-    description: K8s operator to run jobs on git repo changes
-    digest: ad241d7463f92aca9ecf9edf7d2fa4f0aea711001ec59f88da39db27ec05ca90
-    name: git-events-runner
-    type: application
-    urls:
-    - https://github.com/alex-karpenko/helm-charts/releases/download/git-events-runner-0.4.5/git-events-runner-0.4.5.tgz
-    version: 0.4.5
-  - apiVersion: v2
-    appVersion: v0.4.4
-    created: "2025-04-12T10:33:24.013850273Z"
-    description: K8s operator to run jobs on git repo changes
-    digest: a0329e853d0508a4e730fd898f6b852ddb26d70ef6f67d6ba90c5263fc5ab6e4
-    name: git-events-runner
-    type: application
-    urls:
-    - https://github.com/alex-karpenko/helm-charts/releases/download/git-events-runner-0.4.4/git-events-runner-0.4.4.tgz
-    version: 0.4.4
-  - apiVersion: v2
-    appVersion: v0.4.3
-    created: "2025-03-29T19:36:24.133984394Z"
-    description: K8s operator to run jobs on git repo changes
-    digest: dab3e76610165c9c3b62a258ea3cdff967cf10e6a634efa6672a0a89b4976b67
-    name: git-events-runner
-    type: application
-    urls:
-    - https://github.com/alex-karpenko/helm-charts/releases/download/git-events-runner-0.4.3/git-events-runner-0.4.3.tgz
-    version: 0.4.3
-  - apiVersion: v2
-    appVersion: v0.4.2
-    created: "2025-03-14T13:24:31.631811998Z"
-    description: K8s operator to run jobs on git repo changes
-    digest: 0d0de6e626309d4431b13dd35c346990c5bce4289045fe3b0b27ece9e698f723
-    name: git-events-runner
-    type: application
-    urls:
-    - https://github.com/alex-karpenko/helm-charts/releases/download/git-events-runner-0.4.2/git-events-runner-0.4.2.tgz
-    version: 0.4.2
-  - apiVersion: v2
-    appVersion: v0.4.1
-    created: "2025-02-15T15:57:43.744637353Z"
-    description: K8s operator to run jobs on git repo changes
-    digest: 2ca40a0952e835fa1d368c841dbf2821d000dd4427f465cd769adcac53f1b931
-    name: git-events-runner
-    type: application
-    urls:
-    - https://github.com/alex-karpenko/helm-charts/releases/download/git-events-runner-0.4.1/git-events-runner-0.4.1.tgz
-    version: 0.4.1
-  - apiVersion: v2
-    appVersion: v0.4.0
-    created: "2025-01-04T14:22:13.900153552Z"
-    description: K8s operator to run jobs on git repo changes
-    digest: d80de459222c33095baf2cd2adac3cf0a6ebf40f4a2dc5d39be709bb39955a35
-    name: git-events-runner
-    type: application
-    urls:
-    - https://github.com/alex-karpenko/helm-charts/releases/download/git-events-runner-0.4.0/git-events-runner-0.4.0.tgz
-    version: 0.4.0
-  - apiVersion: v2
-    appVersion: v0.3.3
-    created: "2024-12-06T13:28:11.529094943Z"
-    description: K8s operator to run jobs on git repo changes
-    digest: f71c6c0d8c8bdf9cef38851562ccf7520d7ce9c15aba1ce77658009535fc3592
-    name: git-events-runner
-    type: application
-    urls:
-    - https://github.com/alex-karpenko/helm-charts/releases/download/git-events-runner-0.3.3/git-events-runner-0.3.3.tgz
-    version: 0.3.3
-  - apiVersion: v2
-    appVersion: v0.3.2
-    created: "2024-10-12T16:35:36.364479994Z"
-    description: K8s operator to run jobs on git repo changes
-    digest: f0a0f08eec90c982421ebf00c1821251961febfdc6dc88a7df0fcc4cb940670b
-    name: git-events-runner
-    type: application
-    urls:
-    - https://github.com/alex-karpenko/helm-charts/releases/download/git-events-runner-0.3.2/git-events-runner-0.3.2.tgz
-    version: 0.3.2
-  - apiVersion: v2
-    appVersion: v0.3.1
-    created: "2024-10-01T17:28:25.38305973Z"
-    description: K8s operator to run jobs on git repo changes
-    digest: 805d3b05a9b9f5ba2ec02b83d02c1a67251d095af2e31b37a6336909e931ad0f
-    name: git-events-runner
-    type: application
-    urls:
-    - https://github.com/alex-karpenko/helm-charts/releases/download/git-events-runner-0.3.1/git-events-runner-0.3.1.tgz
-    version: 0.3.1
-  - apiVersion: v2
-    appVersion: v0.3.0
-    created: "2024-09-28T15:42:41.670366517Z"
-    description: K8s operator to run jobs on git repo changes
-    digest: b18910257d291a4531aa10bcb36cb0575f85ce138bb3994db6ba95413aae2ff7
-    name: git-events-runner
-    type: application
-    urls:
-    - https://github.com/alex-karpenko/helm-charts/releases/download/git-events-runner-0.3.0/git-events-runner-0.3.0.tgz
-    version: 0.3.0
-  - apiVersion: v2
-    appVersion: v0.2.4
-    created: "2024-09-21T12:12:28.866346119Z"
-    description: K8s operator to run jobs on git repo changes
-    digest: e49a476cb304558c8c86f432d446a611273769e243f129733184ebf22f6930b1
-    name: git-events-runner
-    type: application
-    urls:
-    - https://github.com/alex-karpenko/helm-charts/releases/download/git-events-runner-0.2.7/git-events-runner-0.2.7.tgz
-    version: 0.2.7
-  - apiVersion: v2
-    appVersion: v0.2.3
-    created: "2024-07-19T16:23:43.96444137Z"
-    description: K8s operator to run jobs on git repo changes
-    digest: 48cbcafa2b7451a052e4f96076868372714210d7ce2c413cb3962fc63d092e11
-    name: git-events-runner
-    type: application
-    urls:
-    - https://github.com/alex-karpenko/helm-charts/releases/download/git-events-runner-0.2.6/git-events-runner-0.2.6.tgz
-    version: 0.2.6
-  - apiVersion: v2
-    appVersion: v0.2.2
-    created: "2024-07-08T14:31:30.865755431Z"
-    description: K8s operator to run jobs on git repo changes
-    digest: f4321023061735be204c90a7feeb059f15d03a0e1530fa4b8ce1e79396296aa4
-    name: git-events-runner
-    type: application
-    urls:
-    - https://github.com/alex-karpenko/helm-charts/releases/download/git-events-runner-0.2.5/git-events-runner-0.2.5.tgz
-    version: 0.2.5
-  - apiVersion: v2
-    appVersion: v0.2.1
-    created: "2024-06-29T08:49:54.291029553Z"
-    description: K8s operator to run jobs on git repo changes
-    digest: 2310ade079497858b9761e4fc3f8ba07c7dbacbbf5c643812af420abce462264
-    name: git-events-runner
-    type: application
-    urls:
-    - https://github.com/alex-karpenko/helm-charts/releases/download/git-events-runner-0.2.4/git-events-runner-0.2.4.tgz
-    version: 0.2.4
-  - apiVersion: v2
-    appVersion: v0.2.1
-    created: "2024-06-29T08:47:08.395882714Z"
-    description: K8s operator to run jobs on git repo changes
-    digest: 4066db923a193407fae34cb49828d0ef520d3e00b5e3cbd3733c7cee99e5a1cb
-    name: git-events-runner
-    type: application
-    urls:
-    - https://github.com/alex-karpenko/helm-charts/releases/download/git-events-runner-0.2.3/git-events-runner-0.2.3.tgz
-    version: 0.2.3
-  - apiVersion: v2
-    appVersion: v0.2.1
-    created: "2024-06-26T17:56:48.004822056Z"
-    description: K8s operator to run jobs on git repo changes
-    digest: 49dfdbc50e6e345d097732edeb98d51d2892c66c9c74f0b32448f3e85e492fa1
-    name: git-events-runner
-    type: application
-    urls:
-    - https://github.com/alex-karpenko/helm-charts/releases/download/git-events-runner-0.2.2/git-events-runner-0.2.2.tgz
-    version: 0.2.2
-  - apiVersion: v2
-    appVersion: v0.2.1
-    created: "2024-06-24T20:13:50.865195426Z"
-    description: K8s operator to run jobs on git repo changes
-    digest: fc4bfec01cf9d3ef144edd645c88e2de31a39a0c3c59b7008b9d442142fcb746
-    name: git-events-runner
-    type: application
-    urls:
-    - https://github.com/alex-karpenko/helm-charts/releases/download/git-events-runner-0.2.1/git-events-runner-0.2.1.tgz
-    version: 0.2.1
-  - apiVersion: v2
-    appVersion: v0.2.0
-    created: "2024-06-15T14:54:26.931820163Z"
-    description: K8s operator to run jobs on git repo changes
-    digest: c678bc9fd07de321b9d955041be8b906b18e65c63cdae0c2ee11901bb1b3f260
-    name: git-events-runner
-    type: application
-    urls:
-    - https://github.com/alex-karpenko/helm-charts/releases/download/git-events-runner-0.2.0/git-events-runner-0.2.0.tgz
-    version: 0.2.0
-  - apiVersion: v2
-    appVersion: v0.1.1
-    created: "2024-06-01T18:46:23.850838642Z"
-    description: K8s operator to run jobs on git repo changes
-    digest: b58039dd2f6038f6bd1d7a7720f82ee3f621cdfb11f8e676d8fa64952cd11dbd
-    name: git-events-runner
-    type: application
-    urls:
-    - https://github.com/alex-karpenko/helm-charts/releases/download/git-events-runner-0.1.2/git-events-runner-0.1.2.tgz
-    version: 0.1.2
-  - apiVersion: v2
-    appVersion: v0.1.1
-    created: "2024-06-01T14:31:47.195936785Z"
-    description: K8s operator to run jobs on git repo changes
-    digest: ef4225f19c04b79cbbe2c5af4a37af388be9141ebee1b5b5f20a8993296bfa5d
-    name: git-events-runner
-    type: application
-    urls:
-    - https://github.com/alex-karpenko/helm-charts/releases/download/git-events-runner-0.1.1/git-events-runner-0.1.1.tgz
-    version: 0.1.1
-  - apiVersion: v2
-    appVersion: v0.1.0
-    created: "2024-05-24T20:08:08.502463793Z"
-    description: K8s operator to run jobs on git repo changes
-    digest: 20b1ba0697eca4e8b659589bc2f67003dfc544cfc70480f8fa9ace18622cf458
-    name: git-events-runner
-    type: application
-    urls:
-    - https://github.com/alex-karpenko/helm-charts/releases/download/git-events-runner-0.1.0/git-events-runner-0.1.0.tgz
-    version: 0.1.0
-  - apiVersion: v2
-    appVersion: v0.0.17
-    created: "2024-05-23T20:02:03.432690827Z"
-    description: K8s operator to run jobs on git repo changes
-    digest: a81695bc6b7b268b2100c989087fa5e79e64dad6f6360de4b915369b96f41e9a
-    name: git-events-runner
-    type: application
-    urls:
-    - https://github.com/alex-karpenko/helm-charts/releases/download/git-events-runner-0.0.20/git-events-runner-0.0.20.tgz
-    version: 0.0.20
-  - apiVersion: v2
-    appVersion: v0.0.16
-    created: "2024-05-19T15:19:59.094838265Z"
-    description: K8s operator to run jobs on git repo changes
-    digest: 2e7b3840e9f68ea48f88f766c451acfdb293bc9dcfd302e8fa03f47fc2ecb60b
-    name: git-events-runner
-    type: application
-    urls:
-    - https://github.com/alex-karpenko/helm-charts/releases/download/git-events-runner-0.0.19/git-events-runner-0.0.19.tgz
-    version: 0.0.19
-  - apiVersion: v2
-    appVersion: v0.0.16
-    created: "2024-05-18T15:46:23.254204839Z"
-    description: K8s operator to run jobs on git repo changes
-    digest: 459beedd3a34ce09343ad0d9a15f0154d3516db040273761eda79df03cf2d50c
-    name: git-events-runner
-    type: application
-    urls:
-    - https://github.com/alex-karpenko/helm-charts/releases/download/git-events-runner-0.0.18/git-events-runner-0.0.18.tgz
-    version: 0.0.18
-  - apiVersion: v2
-    appVersion: v0.0.16
-    created: "2024-05-18T15:17:50.263554607Z"
-    description: K8s operator to run jobs on git repo changes
-    digest: 30216112cf1d4da9b01c17177848fa1080e8ce98ef913b8fe6e520b9381d291a
-    name: git-events-runner
-    type: application
-    urls:
-    - https://github.com/alex-karpenko/helm-charts/releases/download/git-events-runner-0.0.17/git-events-runner-0.0.17.tgz
-    version: 0.0.17
-  - apiVersion: v2
-    appVersion: v0.0.16
-    created: "2024-05-12T15:39:49.074710722Z"
-    description: K8s operator to run jobs on git repo changes
-    digest: 3eb75444a9220118abdc51054c879ff139a9adc250c44a28ab07a18c6facb05b
-    name: git-events-runner
-    type: application
-    urls:
-    - https://github.com/alex-karpenko/helm-charts/releases/download/git-events-runner-0.0.16/git-events-runner-0.0.16.tgz
-    version: 0.0.16
+    - apiVersion: v2
+      appVersion: v0.4.5
+      created: "2025-06-21T10:30:43.910455682Z"
+      description: K8s operator to run jobs on git repo changes
+      digest: ad241d7463f92aca9ecf9edf7d2fa4f0aea711001ec59f88da39db27ec05ca90
+      name: git-events-runner
+      type: application
+      urls:
+        - https://github.com/alex-karpenko/helm-charts/releases/download/git-events-runner-0.4.5/git-events-runner-0.4.5.tgz
+      version: 0.4.5
+    - apiVersion: v2
+      appVersion: v0.4.4
+      created: "2025-04-12T10:33:24.013850273Z"
+      description: K8s operator to run jobs on git repo changes
+      digest: a0329e853d0508a4e730fd898f6b852ddb26d70ef6f67d6ba90c5263fc5ab6e4
+      name: git-events-runner
+      type: application
+      urls:
+        - https://github.com/alex-karpenko/helm-charts/releases/download/git-events-runner-0.4.4/git-events-runner-0.4.4.tgz
+      version: 0.4.4
+    - apiVersion: v2
+      appVersion: v0.4.3
+      created: "2025-03-29T19:36:24.133984394Z"
+      description: K8s operator to run jobs on git repo changes
+      digest: dab3e76610165c9c3b62a258ea3cdff967cf10e6a634efa6672a0a89b4976b67
+      name: git-events-runner
+      type: application
+      urls:
+        - https://github.com/alex-karpenko/helm-charts/releases/download/git-events-runner-0.4.3/git-events-runner-0.4.3.tgz
+      version: 0.4.3
+    - apiVersion: v2
+      appVersion: v0.4.2
+      created: "2025-03-14T13:24:31.631811998Z"
+      description: K8s operator to run jobs on git repo changes
+      digest: 0d0de6e626309d4431b13dd35c346990c5bce4289045fe3b0b27ece9e698f723
+      name: git-events-runner
+      type: application
+      urls:
+        - https://github.com/alex-karpenko/helm-charts/releases/download/git-events-runner-0.4.2/git-events-runner-0.4.2.tgz
+      version: 0.4.2
+    - apiVersion: v2
+      appVersion: v0.4.1
+      created: "2025-02-15T15:57:43.744637353Z"
+      description: K8s operator to run jobs on git repo changes
+      digest: 2ca40a0952e835fa1d368c841dbf2821d000dd4427f465cd769adcac53f1b931
+      name: git-events-runner
+      type: application
+      urls:
+        - https://github.com/alex-karpenko/helm-charts/releases/download/git-events-runner-0.4.1/git-events-runner-0.4.1.tgz
+      version: 0.4.1
+    - apiVersion: v2
+      appVersion: v0.4.0
+      created: "2025-01-04T14:22:13.900153552Z"
+      description: K8s operator to run jobs on git repo changes
+      digest: d80de459222c33095baf2cd2adac3cf0a6ebf40f4a2dc5d39be709bb39955a35
+      name: git-events-runner
+      type: application
+      urls:
+        - https://github.com/alex-karpenko/helm-charts/releases/download/git-events-runner-0.4.0/git-events-runner-0.4.0.tgz
+      version: 0.4.0
+    - apiVersion: v2
+      appVersion: v0.3.3
+      created: "2024-12-06T13:28:11.529094943Z"
+      description: K8s operator to run jobs on git repo changes
+      digest: f71c6c0d8c8bdf9cef38851562ccf7520d7ce9c15aba1ce77658009535fc3592
+      name: git-events-runner
+      type: application
+      urls:
+        - https://github.com/alex-karpenko/helm-charts/releases/download/git-events-runner-0.3.3/git-events-runner-0.3.3.tgz
+      version: 0.3.3
+    - apiVersion: v2
+      appVersion: v0.3.2
+      created: "2024-10-12T16:35:36.364479994Z"
+      description: K8s operator to run jobs on git repo changes
+      digest: f0a0f08eec90c982421ebf00c1821251961febfdc6dc88a7df0fcc4cb940670b
+      name: git-events-runner
+      type: application
+      urls:
+        - https://github.com/alex-karpenko/helm-charts/releases/download/git-events-runner-0.3.2/git-events-runner-0.3.2.tgz
+      version: 0.3.2
+    - apiVersion: v2
+      appVersion: v0.3.1
+      created: "2024-10-01T17:28:25.38305973Z"
+      description: K8s operator to run jobs on git repo changes
+      digest: 805d3b05a9b9f5ba2ec02b83d02c1a67251d095af2e31b37a6336909e931ad0f
+      name: git-events-runner
+      type: application
+      urls:
+        - https://github.com/alex-karpenko/helm-charts/releases/download/git-events-runner-0.3.1/git-events-runner-0.3.1.tgz
+      version: 0.3.1
+    - apiVersion: v2
+      appVersion: v0.3.0
+      created: "2024-09-28T15:42:41.670366517Z"
+      description: K8s operator to run jobs on git repo changes
+      digest: b18910257d291a4531aa10bcb36cb0575f85ce138bb3994db6ba95413aae2ff7
+      name: git-events-runner
+      type: application
+      urls:
+        - https://github.com/alex-karpenko/helm-charts/releases/download/git-events-runner-0.3.0/git-events-runner-0.3.0.tgz
+      version: 0.3.0
+    - apiVersion: v2
+      appVersion: v0.2.4
+      created: "2024-09-21T12:12:28.866346119Z"
+      description: K8s operator to run jobs on git repo changes
+      digest: e49a476cb304558c8c86f432d446a611273769e243f129733184ebf22f6930b1
+      name: git-events-runner
+      type: application
+      urls:
+        - https://github.com/alex-karpenko/helm-charts/releases/download/git-events-runner-0.2.7/git-events-runner-0.2.7.tgz
+      version: 0.2.7
+    - apiVersion: v2
+      appVersion: v0.2.3
+      created: "2024-07-19T16:23:43.96444137Z"
+      description: K8s operator to run jobs on git repo changes
+      digest: 48cbcafa2b7451a052e4f96076868372714210d7ce2c413cb3962fc63d092e11
+      name: git-events-runner
+      type: application
+      urls:
+        - https://github.com/alex-karpenko/helm-charts/releases/download/git-events-runner-0.2.6/git-events-runner-0.2.6.tgz
+      version: 0.2.6
+    - apiVersion: v2
+      appVersion: v0.2.2
+      created: "2024-07-08T14:31:30.865755431Z"
+      description: K8s operator to run jobs on git repo changes
+      digest: f4321023061735be204c90a7feeb059f15d03a0e1530fa4b8ce1e79396296aa4
+      name: git-events-runner
+      type: application
+      urls:
+        - https://github.com/alex-karpenko/helm-charts/releases/download/git-events-runner-0.2.5/git-events-runner-0.2.5.tgz
+      version: 0.2.5
+    - apiVersion: v2
+      appVersion: v0.2.1
+      created: "2024-06-29T08:49:54.291029553Z"
+      description: K8s operator to run jobs on git repo changes
+      digest: 2310ade079497858b9761e4fc3f8ba07c7dbacbbf5c643812af420abce462264
+      name: git-events-runner
+      type: application
+      urls:
+        - https://github.com/alex-karpenko/helm-charts/releases/download/git-events-runner-0.2.4/git-events-runner-0.2.4.tgz
+      version: 0.2.4
+    - apiVersion: v2
+      appVersion: v0.2.1
+      created: "2024-06-29T08:47:08.395882714Z"
+      description: K8s operator to run jobs on git repo changes
+      digest: 4066db923a193407fae34cb49828d0ef520d3e00b5e3cbd3733c7cee99e5a1cb
+      name: git-events-runner
+      type: application
+      urls:
+        - https://github.com/alex-karpenko/helm-charts/releases/download/git-events-runner-0.2.3/git-events-runner-0.2.3.tgz
+      version: 0.2.3
+    - apiVersion: v2
+      appVersion: v0.2.1
+      created: "2024-06-26T17:56:48.004822056Z"
+      description: K8s operator to run jobs on git repo changes
+      digest: 49dfdbc50e6e345d097732edeb98d51d2892c66c9c74f0b32448f3e85e492fa1
+      name: git-events-runner
+      type: application
+      urls:
+        - https://github.com/alex-karpenko/helm-charts/releases/download/git-events-runner-0.2.2/git-events-runner-0.2.2.tgz
+      version: 0.2.2
+    - apiVersion: v2
+      appVersion: v0.2.1
+      created: "2024-06-24T20:13:50.865195426Z"
+      description: K8s operator to run jobs on git repo changes
+      digest: fc4bfec01cf9d3ef144edd645c88e2de31a39a0c3c59b7008b9d442142fcb746
+      name: git-events-runner
+      type: application
+      urls:
+        - https://github.com/alex-karpenko/helm-charts/releases/download/git-events-runner-0.2.1/git-events-runner-0.2.1.tgz
+      version: 0.2.1
+    - apiVersion: v2
+      appVersion: v0.2.0
+      created: "2024-06-15T14:54:26.931820163Z"
+      description: K8s operator to run jobs on git repo changes
+      digest: c678bc9fd07de321b9d955041be8b906b18e65c63cdae0c2ee11901bb1b3f260
+      name: git-events-runner
+      type: application
+      urls:
+        - https://github.com/alex-karpenko/helm-charts/releases/download/git-events-runner-0.2.0/git-events-runner-0.2.0.tgz
+      version: 0.2.0
+    - apiVersion: v2
+      appVersion: v0.1.1
+      created: "2024-06-01T18:46:23.850838642Z"
+      description: K8s operator to run jobs on git repo changes
+      digest: b58039dd2f6038f6bd1d7a7720f82ee3f621cdfb11f8e676d8fa64952cd11dbd
+      name: git-events-runner
+      type: application
+      urls:
+        - https://github.com/alex-karpenko/helm-charts/releases/download/git-events-runner-0.1.2/git-events-runner-0.1.2.tgz
+      version: 0.1.2
+    - apiVersion: v2
+      appVersion: v0.1.1
+      created: "2024-06-01T14:31:47.195936785Z"
+      description: K8s operator to run jobs on git repo changes
+      digest: ef4225f19c04b79cbbe2c5af4a37af388be9141ebee1b5b5f20a8993296bfa5d
+      name: git-events-runner
+      type: application
+      urls:
+        - https://github.com/alex-karpenko/helm-charts/releases/download/git-events-runner-0.1.1/git-events-runner-0.1.1.tgz
+      version: 0.1.1
+    - apiVersion: v2
+      appVersion: v0.1.0
+      created: "2024-05-24T20:08:08.502463793Z"
+      description: K8s operator to run jobs on git repo changes
+      digest: 20b1ba0697eca4e8b659589bc2f67003dfc544cfc70480f8fa9ace18622cf458
+      name: git-events-runner
+      type: application
+      urls:
+        - https://github.com/alex-karpenko/helm-charts/releases/download/git-events-runner-0.1.0/git-events-runner-0.1.0.tgz
+      version: 0.1.0
+    - apiVersion: v2
+      appVersion: v0.0.17
+      created: "2024-05-23T20:02:03.432690827Z"
+      description: K8s operator to run jobs on git repo changes
+      digest: a81695bc6b7b268b2100c989087fa5e79e64dad6f6360de4b915369b96f41e9a
+      name: git-events-runner
+      type: application
+      urls:
+        - https://github.com/alex-karpenko/helm-charts/releases/download/git-events-runner-0.0.20/git-events-runner-0.0.20.tgz
+      version: 0.0.20
+    - apiVersion: v2
+      appVersion: v0.0.16
+      created: "2024-05-19T15:19:59.094838265Z"
+      description: K8s operator to run jobs on git repo changes
+      digest: 2e7b3840e9f68ea48f88f766c451acfdb293bc9dcfd302e8fa03f47fc2ecb60b
+      name: git-events-runner
+      type: application
+      urls:
+        - https://github.com/alex-karpenko/helm-charts/releases/download/git-events-runner-0.0.19/git-events-runner-0.0.19.tgz
+      version: 0.0.19
+    - apiVersion: v2
+      appVersion: v0.0.16
+      created: "2024-05-18T15:46:23.254204839Z"
+      description: K8s operator to run jobs on git repo changes
+      digest: 459beedd3a34ce09343ad0d9a15f0154d3516db040273761eda79df03cf2d50c
+      name: git-events-runner
+      type: application
+      urls:
+        - https://github.com/alex-karpenko/helm-charts/releases/download/git-events-runner-0.0.18/git-events-runner-0.0.18.tgz
+      version: 0.0.18
+    - apiVersion: v2
+      appVersion: v0.0.16
+      created: "2024-05-18T15:17:50.263554607Z"
+      description: K8s operator to run jobs on git repo changes
+      digest: 30216112cf1d4da9b01c17177848fa1080e8ce98ef913b8fe6e520b9381d291a
+      name: git-events-runner
+      type: application
+      urls:
+        - https://github.com/alex-karpenko/helm-charts/releases/download/git-events-runner-0.0.17/git-events-runner-0.0.17.tgz
+      version: 0.0.17
+    - apiVersion: v2
+      appVersion: v0.0.16
+      created: "2024-05-12T15:39:49.074710722Z"
+      description: K8s operator to run jobs on git repo changes
+      digest: 3eb75444a9220118abdc51054c879ff139a9adc250c44a28ab07a18c6facb05b
+      name: git-events-runner
+      type: application
+      urls:
+        - https://github.com/alex-karpenko/helm-charts/releases/download/git-events-runner-0.0.16/git-events-runner-0.0.16.tgz
+      version: 0.0.16
   http-dragonfly:
-  - apiVersion: v2
-    appVersion: v0.3.7
-    created: "2025-04-12T10:33:24.191912825Z"
-    description: http-dragonfly Helm chart
-    digest: 6d55269c65e521f720591b1b3a9c9712768f2abbacd11efdede9729b0ee37bca
-    name: http-dragonfly
-    type: application
-    urls:
-    - https://github.com/alex-karpenko/helm-charts/releases/download/http-dragonfly-0.3.7/http-dragonfly-0.3.7.tgz
-    version: 0.3.7
-  - apiVersion: v2
-    appVersion: v0.3.6
-    created: "2025-03-08T07:57:32.904819391Z"
-    description: http-dragonfly Helm chart
-    digest: 15fd1ff1e482adec3c8611b62a4faf529145fcec45c0cc24e7e9ae1a8121b251
-    name: http-dragonfly
-    type: application
-    urls:
-    - https://github.com/alex-karpenko/helm-charts/releases/download/http-dragonfly-0.3.6/http-dragonfly-0.3.6.tgz
-    version: 0.3.6
-  - apiVersion: v2
-    appVersion: v0.3.5
-    created: "2025-02-07T01:59:51.686099996Z"
-    description: http-dragonfly Helm chart
-    digest: 004456406cf140bf0fb2bc0bfefc46ccf81bfde8aa5d8fab4fb8ff0ff333e71d
-    name: http-dragonfly
-    type: application
-    urls:
-    - https://github.com/alex-karpenko/helm-charts/releases/download/http-dragonfly-0.3.5/http-dragonfly-0.3.5.tgz
-    version: 0.3.5
-  - apiVersion: v2
-    appVersion: v0.3.4
-    created: "2025-01-24T15:43:45.064716782Z"
-    description: http-dragonfly Helm chart
-    digest: d40f6f2644829c3794221ca62526b8e7619b1e016fce7410ce7007653292006c
-    name: http-dragonfly
-    type: application
-    urls:
-    - https://github.com/alex-karpenko/helm-charts/releases/download/http-dragonfly-0.3.4/http-dragonfly-0.3.4.tgz
-    version: 0.3.4
-  - apiVersion: v2
-    appVersion: v0.3.3
-    created: "2024-11-28T04:27:19.54139699Z"
-    description: http-dragonfly Helm chart
-    digest: 57485254242e1790eab72e969a65d9733dec1c356cda5350bf17f897592b56e1
-    name: http-dragonfly
-    type: application
-    urls:
-    - https://github.com/alex-karpenko/helm-charts/releases/download/http-dragonfly-0.3.3/http-dragonfly-0.3.3.tgz
-    version: 0.3.3
-  - apiVersion: v2
-    appVersion: v0.3.2
-    created: "2024-10-22T17:44:14.102611345Z"
-    description: http-dragonfly Helm chart
-    digest: 1127b21a1fe4bebccb36a8aa6b7c7c5fab337b694f6e960e606ac1529c652608
-    name: http-dragonfly
-    type: application
-    urls:
-    - https://github.com/alex-karpenko/helm-charts/releases/download/http-dragonfly-0.3.2/http-dragonfly-0.3.2.tgz
-    version: 0.3.2
-  - apiVersion: v2
-    appVersion: v0.3.1
-    created: "2024-08-21T19:06:56.029548444Z"
-    description: http-dragonfly Helm chart
-    digest: 42598760e78e6ab4b43b07dd9f55a8eb43086962beeabf1437c3b979bc1cb6b6
-    name: http-dragonfly
-    type: application
-    urls:
-    - https://github.com/alex-karpenko/helm-charts/releases/download/http-dragonfly-0.3.1/http-dragonfly-0.3.1.tgz
-    version: 0.3.1
-  - apiVersion: v2
-    appVersion: v0.3.0
-    created: "2024-08-20T20:18:32.491354632Z"
-    description: http-dragonfly Helm chart
-    digest: eef45629428d47e5e11255930071abe9ae684303e4c79d027b10d15d2b531536
-    name: http-dragonfly
-    type: application
-    urls:
-    - https://github.com/alex-karpenko/helm-charts/releases/download/http-dragonfly-0.3.0/http-dragonfly-0.3.0.tgz
-    version: 0.3.0
-  - apiVersion: v2
-    appVersion: v0.2.10
-    created: "2024-08-13T19:22:44.857797248Z"
-    description: http-dragonfly Helm chart
-    digest: 47f48ae245b110678949cdaf023a6329e1320723c720c3cb70396c734a42e159
-    name: http-dragonfly
-    type: application
-    urls:
-    - https://github.com/alex-karpenko/helm-charts/releases/download/http-dragonfly-0.1.12/http-dragonfly-0.1.12.tgz
-    version: 0.1.12
-  - apiVersion: v2
-    appVersion: v0.2.9
-    created: "2024-08-10T17:35:12.360503213Z"
-    description: http-dragonfly Helm chart
-    digest: 5a33c0ac213ff96fd8e26971ea432a2c0789be36a6231c8edd612ce47d8e6864
-    name: http-dragonfly
-    type: application
-    urls:
-    - https://github.com/alex-karpenko/helm-charts/releases/download/http-dragonfly-0.1.11/http-dragonfly-0.1.11.tgz
-    version: 0.1.11
-  - apiVersion: v2
-    appVersion: v0.2.8
-    created: "2024-07-26T18:05:00.256754155Z"
-    description: http-dragonfly Helm chart
-    digest: 2346bc0ff5f41a6acd4c251128e88ed645543cbed936aed4f661db73da3c8973
-    name: http-dragonfly
-    type: application
-    urls:
-    - https://github.com/alex-karpenko/helm-charts/releases/download/http-dragonfly-0.1.10/http-dragonfly-0.1.10.tgz
-    version: 0.1.10
-  - apiVersion: v2
-    appVersion: v0.2.7
-    created: "2024-07-19T16:23:44.143702586Z"
-    description: http-dragonfly Helm chart
-    digest: 987a7e23baa21b59085d0edf97ca0187be7e466867fd103eddecad7a5d4c22d7
-    name: http-dragonfly
-    type: application
-    urls:
-    - https://github.com/alex-karpenko/helm-charts/releases/download/http-dragonfly-0.1.9/http-dragonfly-0.1.9.tgz
-    version: 0.1.9
-  - apiVersion: v2
-    appVersion: v0.2.6
-    created: "2024-07-12T11:05:16.2085004Z"
-    description: http-dragonfly Helm chart
-    digest: edf51622470b26b3a56db5e02da4a1b904cfafa8215c5f1a12888647e5289efd
-    name: http-dragonfly
-    type: application
-    urls:
-    - https://github.com/alex-karpenko/helm-charts/releases/download/http-dragonfly-0.1.8/http-dragonfly-0.1.8.tgz
-    version: 0.1.8
-  - apiVersion: v2
-    appVersion: v0.2.5
-    created: "2024-05-18T19:10:19.443912345Z"
-    description: http-dragonfly Helm chart
-    digest: e24c4b224b91abc60d86664de42c8ff65d316030ae8e07b766268dd6eec288e7
-    name: http-dragonfly
-    type: application
-    urls:
-    - https://github.com/alex-karpenko/helm-charts/releases/download/http-dragonfly-0.1.7/http-dragonfly-0.1.7.tgz
-    version: 0.1.7
-  - apiVersion: v2
-    appVersion: v0.2.4
-    created: "2024-05-10T20:36:48.018438228Z"
-    description: http-dragonfly Helm chart
-    digest: addff0e37e60fad57582f7e812ae8bec8f65889bfef81fb64c6af9a22fc762e0
-    name: http-dragonfly
-    type: application
-    urls:
-    - https://github.com/alex-karpenko/helm-charts/releases/download/http-dragonfly-0.1.6/http-dragonfly-0.1.6.tgz
-    version: 0.1.6
-  - apiVersion: v2
-    appVersion: v0.2.3
-    created: "2024-04-07T10:19:58.892073902Z"
-    description: http-dragonfly Helm chart
-    digest: 1f7bb4e93ca431022e0a79ef35469301dff9182cbd467535dafe3de2492f04ba
-    name: http-dragonfly
-    type: application
-    urls:
-    - https://github.com/alex-karpenko/helm-charts/releases/download/http-dragonfly-0.1.5/http-dragonfly-0.1.5.tgz
-    version: 0.1.5
-  - apiVersion: v2
-    appVersion: v0.2.2
-    created: "2024-03-30T09:01:49.241645562Z"
-    description: http-dragonfly Helm chart
-    digest: 73e8ac6ce8f5ecbf9cdd8dfe700b5633ea3c307852707f31ee19da408d5134ed
-    name: http-dragonfly
-    type: application
-    urls:
-    - https://github.com/alex-karpenko/helm-charts/releases/download/http-dragonfly-0.1.4/http-dragonfly-0.1.4.tgz
-    version: 0.1.4
-  - apiVersion: v2
-    appVersion: v0.2.1
-    created: "2024-03-08T19:41:05.776254723Z"
-    description: http-dragonfly Helm chart
-    digest: 6fb534a6d8efdc4af6a28f2611907503f0245acc18194f00574ad8ad73af8fc8
-    name: http-dragonfly
-    type: application
-    urls:
-    - https://github.com/alex-karpenko/helm-charts/releases/download/http-dragonfly-0.1.3/http-dragonfly-0.1.3.tgz
-    version: 0.1.3
-  - apiVersion: v2
-    appVersion: v0.2.0
-    created: "2024-01-21T17:11:20.527389395Z"
-    description: http-dragonfly Helm chart
-    digest: 6bc7a2cf8f1608d958cca22eff19ea225e1476b618f38336f879933393d50cbb
-    name: http-dragonfly
-    type: application
-    urls:
-    - https://github.com/alex-karpenko/helm-charts/releases/download/http-dragonfly-0.1.2/http-dragonfly-0.1.2.tgz
-    version: 0.1.2
-  - apiVersion: v2
-    appVersion: v0.1.1
-    created: "2023-12-31T15:08:14.581475282Z"
-    description: http-dragonfly Helm chart
-    digest: 978e7c5fb2e8604ce782e11ad3db6df96f7d0b2043ec7ad662a5ae1095249942
-    name: http-dragonfly
-    type: application
-    urls:
-    - https://github.com/alex-karpenko/helm-charts/releases/download/http-dragonfly-0.1.1/http-dragonfly-0.1.1.tgz
-    version: 0.1.1
-  - apiVersion: v2
-    appVersion: v0.1.0
-    created: "2023-12-25T15:42:35.850261964Z"
-    description: http-dragonfly Helm chart
-    digest: 47eefc80ada83c9a2edae19e5f7f7309771f3093c55df8b7e969ef24a095f347
-    name: http-dragonfly
-    type: application
-    urls:
-    - https://github.com/alex-karpenko/helm-charts/releases/download/http-dragonfly-0.1.0/http-dragonfly-0.1.0.tgz
-    version: 0.1.0
+    - apiVersion: v2
+      appVersion: v0.3.7
+      created: "2025-04-12T10:33:24.191912825Z"
+      description: http-dragonfly Helm chart
+      digest: 6d55269c65e521f720591b1b3a9c9712768f2abbacd11efdede9729b0ee37bca
+      name: http-dragonfly
+      type: application
+      urls:
+        - https://github.com/alex-karpenko/helm-charts/releases/download/http-dragonfly-0.3.7/http-dragonfly-0.3.7.tgz
+      version: 0.3.7
+    - apiVersion: v2
+      appVersion: v0.3.6
+      created: "2025-03-08T07:57:32.904819391Z"
+      description: http-dragonfly Helm chart
+      digest: 15fd1ff1e482adec3c8611b62a4faf529145fcec45c0cc24e7e9ae1a8121b251
+      name: http-dragonfly
+      type: application
+      urls:
+        - https://github.com/alex-karpenko/helm-charts/releases/download/http-dragonfly-0.3.6/http-dragonfly-0.3.6.tgz
+      version: 0.3.6
+    - apiVersion: v2
+      appVersion: v0.3.5
+      created: "2025-02-07T01:59:51.686099996Z"
+      description: http-dragonfly Helm chart
+      digest: 004456406cf140bf0fb2bc0bfefc46ccf81bfde8aa5d8fab4fb8ff0ff333e71d
+      name: http-dragonfly
+      type: application
+      urls:
+        - https://github.com/alex-karpenko/helm-charts/releases/download/http-dragonfly-0.3.5/http-dragonfly-0.3.5.tgz
+      version: 0.3.5
+    - apiVersion: v2
+      appVersion: v0.3.4
+      created: "2025-01-24T15:43:45.064716782Z"
+      description: http-dragonfly Helm chart
+      digest: d40f6f2644829c3794221ca62526b8e7619b1e016fce7410ce7007653292006c
+      name: http-dragonfly
+      type: application
+      urls:
+        - https://github.com/alex-karpenko/helm-charts/releases/download/http-dragonfly-0.3.4/http-dragonfly-0.3.4.tgz
+      version: 0.3.4
+    - apiVersion: v2
+      appVersion: v0.3.3
+      created: "2024-11-28T04:27:19.54139699Z"
+      description: http-dragonfly Helm chart
+      digest: 57485254242e1790eab72e969a65d9733dec1c356cda5350bf17f897592b56e1
+      name: http-dragonfly
+      type: application
+      urls:
+        - https://github.com/alex-karpenko/helm-charts/releases/download/http-dragonfly-0.3.3/http-dragonfly-0.3.3.tgz
+      version: 0.3.3
+    - apiVersion: v2
+      appVersion: v0.3.2
+      created: "2024-10-22T17:44:14.102611345Z"
+      description: http-dragonfly Helm chart
+      digest: 1127b21a1fe4bebccb36a8aa6b7c7c5fab337b694f6e960e606ac1529c652608
+      name: http-dragonfly
+      type: application
+      urls:
+        - https://github.com/alex-karpenko/helm-charts/releases/download/http-dragonfly-0.3.2/http-dragonfly-0.3.2.tgz
+      version: 0.3.2
+    - apiVersion: v2
+      appVersion: v0.3.1
+      created: "2024-08-21T19:06:56.029548444Z"
+      description: http-dragonfly Helm chart
+      digest: 42598760e78e6ab4b43b07dd9f55a8eb43086962beeabf1437c3b979bc1cb6b6
+      name: http-dragonfly
+      type: application
+      urls:
+        - https://github.com/alex-karpenko/helm-charts/releases/download/http-dragonfly-0.3.1/http-dragonfly-0.3.1.tgz
+      version: 0.3.1
+    - apiVersion: v2
+      appVersion: v0.3.0
+      created: "2024-08-20T20:18:32.491354632Z"
+      description: http-dragonfly Helm chart
+      digest: eef45629428d47e5e11255930071abe9ae684303e4c79d027b10d15d2b531536
+      name: http-dragonfly
+      type: application
+      urls:
+        - https://github.com/alex-karpenko/helm-charts/releases/download/http-dragonfly-0.3.0/http-dragonfly-0.3.0.tgz
+      version: 0.3.0
+    - apiVersion: v2
+      appVersion: v0.2.10
+      created: "2024-08-13T19:22:44.857797248Z"
+      description: http-dragonfly Helm chart
+      digest: 47f48ae245b110678949cdaf023a6329e1320723c720c3cb70396c734a42e159
+      name: http-dragonfly
+      type: application
+      urls:
+        - https://github.com/alex-karpenko/helm-charts/releases/download/http-dragonfly-0.1.12/http-dragonfly-0.1.12.tgz
+      version: 0.1.12
+    - apiVersion: v2
+      appVersion: v0.2.9
+      created: "2024-08-10T17:35:12.360503213Z"
+      description: http-dragonfly Helm chart
+      digest: 5a33c0ac213ff96fd8e26971ea432a2c0789be36a6231c8edd612ce47d8e6864
+      name: http-dragonfly
+      type: application
+      urls:
+        - https://github.com/alex-karpenko/helm-charts/releases/download/http-dragonfly-0.1.11/http-dragonfly-0.1.11.tgz
+      version: 0.1.11
+    - apiVersion: v2
+      appVersion: v0.2.8
+      created: "2024-07-26T18:05:00.256754155Z"
+      description: http-dragonfly Helm chart
+      digest: 2346bc0ff5f41a6acd4c251128e88ed645543cbed936aed4f661db73da3c8973
+      name: http-dragonfly
+      type: application
+      urls:
+        - https://github.com/alex-karpenko/helm-charts/releases/download/http-dragonfly-0.1.10/http-dragonfly-0.1.10.tgz
+      version: 0.1.10
+    - apiVersion: v2
+      appVersion: v0.2.7
+      created: "2024-07-19T16:23:44.143702586Z"
+      description: http-dragonfly Helm chart
+      digest: 987a7e23baa21b59085d0edf97ca0187be7e466867fd103eddecad7a5d4c22d7
+      name: http-dragonfly
+      type: application
+      urls:
+        - https://github.com/alex-karpenko/helm-charts/releases/download/http-dragonfly-0.1.9/http-dragonfly-0.1.9.tgz
+      version: 0.1.9
+    - apiVersion: v2
+      appVersion: v0.2.6
+      created: "2024-07-12T11:05:16.2085004Z"
+      description: http-dragonfly Helm chart
+      digest: edf51622470b26b3a56db5e02da4a1b904cfafa8215c5f1a12888647e5289efd
+      name: http-dragonfly
+      type: application
+      urls:
+        - https://github.com/alex-karpenko/helm-charts/releases/download/http-dragonfly-0.1.8/http-dragonfly-0.1.8.tgz
+      version: 0.1.8
+    - apiVersion: v2
+      appVersion: v0.2.5
+      created: "2024-05-18T19:10:19.443912345Z"
+      description: http-dragonfly Helm chart
+      digest: e24c4b224b91abc60d86664de42c8ff65d316030ae8e07b766268dd6eec288e7
+      name: http-dragonfly
+      type: application
+      urls:
+        - https://github.com/alex-karpenko/helm-charts/releases/download/http-dragonfly-0.1.7/http-dragonfly-0.1.7.tgz
+      version: 0.1.7
+    - apiVersion: v2
+      appVersion: v0.2.4
+      created: "2024-05-10T20:36:48.018438228Z"
+      description: http-dragonfly Helm chart
+      digest: addff0e37e60fad57582f7e812ae8bec8f65889bfef81fb64c6af9a22fc762e0
+      name: http-dragonfly
+      type: application
+      urls:
+        - https://github.com/alex-karpenko/helm-charts/releases/download/http-dragonfly-0.1.6/http-dragonfly-0.1.6.tgz
+      version: 0.1.6
+    - apiVersion: v2
+      appVersion: v0.2.3
+      created: "2024-04-07T10:19:58.892073902Z"
+      description: http-dragonfly Helm chart
+      digest: 1f7bb4e93ca431022e0a79ef35469301dff9182cbd467535dafe3de2492f04ba
+      name: http-dragonfly
+      type: application
+      urls:
+        - https://github.com/alex-karpenko/helm-charts/releases/download/http-dragonfly-0.1.5/http-dragonfly-0.1.5.tgz
+      version: 0.1.5
+    - apiVersion: v2
+      appVersion: v0.2.2
+      created: "2024-03-30T09:01:49.241645562Z"
+      description: http-dragonfly Helm chart
+      digest: 73e8ac6ce8f5ecbf9cdd8dfe700b5633ea3c307852707f31ee19da408d5134ed
+      name: http-dragonfly
+      type: application
+      urls:
+        - https://github.com/alex-karpenko/helm-charts/releases/download/http-dragonfly-0.1.4/http-dragonfly-0.1.4.tgz
+      version: 0.1.4
+    - apiVersion: v2
+      appVersion: v0.2.1
+      created: "2024-03-08T19:41:05.776254723Z"
+      description: http-dragonfly Helm chart
+      digest: 6fb534a6d8efdc4af6a28f2611907503f0245acc18194f00574ad8ad73af8fc8
+      name: http-dragonfly
+      type: application
+      urls:
+        - https://github.com/alex-karpenko/helm-charts/releases/download/http-dragonfly-0.1.3/http-dragonfly-0.1.3.tgz
+      version: 0.1.3
+    - apiVersion: v2
+      appVersion: v0.2.0
+      created: "2024-01-21T17:11:20.527389395Z"
+      description: http-dragonfly Helm chart
+      digest: 6bc7a2cf8f1608d958cca22eff19ea225e1476b618f38336f879933393d50cbb
+      name: http-dragonfly
+      type: application
+      urls:
+        - https://github.com/alex-karpenko/helm-charts/releases/download/http-dragonfly-0.1.2/http-dragonfly-0.1.2.tgz
+      version: 0.1.2
+    - apiVersion: v2
+      appVersion: v0.1.1
+      created: "2023-12-31T15:08:14.581475282Z"
+      description: http-dragonfly Helm chart
+      digest: 978e7c5fb2e8604ce782e11ad3db6df96f7d0b2043ec7ad662a5ae1095249942
+      name: http-dragonfly
+      type: application
+      urls:
+        - https://github.com/alex-karpenko/helm-charts/releases/download/http-dragonfly-0.1.1/http-dragonfly-0.1.1.tgz
+      version: 0.1.1
+    - apiVersion: v2
+      appVersion: v0.1.0
+      created: "2023-12-25T15:42:35.850261964Z"
+      description: http-dragonfly Helm chart
+      digest: 47eefc80ada83c9a2edae19e5f7f7309771f3093c55df8b7e969ef24a095f347
+      name: http-dragonfly
+      type: application
+      urls:
+        - https://github.com/alex-karpenko/helm-charts/releases/download/http-dragonfly-0.1.0/http-dragonfly-0.1.0.tgz
+      version: 0.1.0
   psql-query-exporter:
-  - apiVersion: v2
-    appVersion: v0.3.0
-    created: "2025-04-20T18:21:31.552475674Z"
-    description: psql-query-exporter Helm chart
-    digest: 13043159c2b8fb77177f51cc1ffc92bf22615d1e23bbb796eb29e9ddf2bb602b
-    name: psql-query-exporter
-    type: application
-    urls:
-    - https://github.com/alex-karpenko/helm-charts/releases/download/psql-query-exporter-0.5.0/psql-query-exporter-0.5.0.tgz
-    version: 0.5.0
-  - apiVersion: v2
-    appVersion: v0.2.28
-    created: "2025-03-29T18:53:03.00512401Z"
-    description: psql-query-exporter Helm chart
-    digest: e2517a3f38977da7f3dc09e4babc063d5aee007e87f756bbbc90e845de81fc01
-    name: psql-query-exporter
-    type: application
-    urls:
-    - https://github.com/alex-karpenko/helm-charts/releases/download/psql-query-exporter-0.4.21/psql-query-exporter-0.4.21.tgz
-    version: 0.4.21
-  - apiVersion: v2
-    appVersion: v0.2.27
-    created: "2025-02-07T01:59:51.764365718Z"
-    description: psql-query-exporter Helm chart
-    digest: 1419fac3616d16423bf20435cd28d5b8fc5238f7fb624ad1c589c21d447a6a7b
-    name: psql-query-exporter
-    type: application
-    urls:
-    - https://github.com/alex-karpenko/helm-charts/releases/download/psql-query-exporter-0.4.20/psql-query-exporter-0.4.20.tgz
-    version: 0.4.20
-  - apiVersion: v2
-    appVersion: v0.2.26
-    created: "2025-01-24T15:43:45.161249769Z"
-    description: psql-query-exporter Helm chart
-    digest: 84c30fb7c500106ca795c8b71dc424b83478dce002f3355e3c6f6aeaa5bdf85d
-    name: psql-query-exporter
-    type: application
-    urls:
-    - https://github.com/alex-karpenko/helm-charts/releases/download/psql-query-exporter-0.4.19/psql-query-exporter-0.4.19.tgz
-    version: 0.4.19
-  - apiVersion: v2
-    appVersion: v0.2.25
-    created: "2024-12-06T13:28:11.681152604Z"
-    description: psql-query-exporter Helm chart
-    digest: 8588b940ed4ac216c47a66a8930381b409b219111e834de9f47b7fef3b26a8b9
-    name: psql-query-exporter
-    type: application
-    urls:
-    - https://github.com/alex-karpenko/helm-charts/releases/download/psql-query-exporter-0.4.18/psql-query-exporter-0.4.18.tgz
-    version: 0.4.18
-  - apiVersion: v2
-    appVersion: v0.2.24
-    created: "2024-10-22T17:44:14.204828734Z"
-    description: psql-query-exporter Helm chart
-    digest: 1488e8cf9d7856e930a9c37f9725840993b0cf2d0ef25eae53b0d3f75c1ce166
-    name: psql-query-exporter
-    type: application
-    urls:
-    - https://github.com/alex-karpenko/helm-charts/releases/download/psql-query-exporter-0.4.17/psql-query-exporter-0.4.17.tgz
-    version: 0.4.17
-  - apiVersion: v2
-    appVersion: v0.2.23
-    created: "2024-10-04T18:05:58.898829252Z"
-    description: psql-query-exporter Helm chart
-    digest: e2f0b7ec56482338d75c9d050472966ada289a7e6437d8567d8321109a047f4f
-    name: psql-query-exporter
-    type: application
-    urls:
-    - https://github.com/alex-karpenko/helm-charts/releases/download/psql-query-exporter-0.4.16/psql-query-exporter-0.4.16.tgz
-    version: 0.4.16
-  - apiVersion: v2
-    appVersion: v0.2.22
-    created: "2024-08-06T18:54:21.602988527Z"
-    description: psql-query-exporter Helm chart
-    digest: 756a50f7f80953ccfc3f0d59bcdc22dbf8832e71f048ea4a460456bcaf9734e7
-    name: psql-query-exporter
-    type: application
-    urls:
-    - https://github.com/alex-karpenko/helm-charts/releases/download/psql-query-exporter-0.4.15/psql-query-exporter-0.4.15.tgz
-    version: 0.4.15
-  - apiVersion: v2
-    appVersion: v0.2.21
-    created: "2024-07-26T09:31:04.621733558Z"
-    description: psql-query-exporter Helm chart
-    digest: 25cf096b299f336ae37719dddb45009086112b7577399f34e13566691a95a1fb
-    name: psql-query-exporter
-    type: application
-    urls:
-    - https://github.com/alex-karpenko/helm-charts/releases/download/psql-query-exporter-0.4.14/psql-query-exporter-0.4.14.tgz
-    version: 0.4.14
-  - apiVersion: v2
-    appVersion: v0.2.20
-    created: "2024-07-19T16:23:44.316707118Z"
-    description: psql-query-exporter Helm chart
-    digest: 99060cd01b1427ea68e50c35880eb89dd49d7a623e4399ddad1aa110bfdcac6c
-    name: psql-query-exporter
-    type: application
-    urls:
-    - https://github.com/alex-karpenko/helm-charts/releases/download/psql-query-exporter-0.4.13/psql-query-exporter-0.4.13.tgz
-    version: 0.4.13
-  - apiVersion: v2
-    appVersion: v0.2.19
-    created: "2024-07-12T11:05:16.352274034Z"
-    description: psql-query-exporter Helm chart
-    digest: 8e9af346638bb9366fe5ceba9e01b84f7b08239744c5f178696d6455c058e3b2
-    name: psql-query-exporter
-    type: application
-    urls:
-    - https://github.com/alex-karpenko/helm-charts/releases/download/psql-query-exporter-0.4.12/psql-query-exporter-0.4.12.tgz
-    version: 0.4.12
-  - apiVersion: v2
-    appVersion: v0.2.18
-    created: "2024-05-31T16:43:27.028475847Z"
-    description: psql-query-exporter Helm chart
-    digest: 85afe10b03269933cea735394d0f162336607f24a67348f0d92b97cef87c6f4f
-    name: psql-query-exporter
-    type: application
-    urls:
-    - https://github.com/alex-karpenko/helm-charts/releases/download/psql-query-exporter-0.4.11/psql-query-exporter-0.4.11.tgz
-    version: 0.4.11
-  - apiVersion: v2
-    appVersion: v0.2.17
-    created: "2024-04-07T10:19:58.986288738Z"
-    description: psql-query-exporter Helm chart
-    digest: 62511cb72962cd371291dece1508489f05db9022c4efaf8b395697d9c712f632
-    name: psql-query-exporter
-    type: application
-    urls:
-    - https://github.com/alex-karpenko/helm-charts/releases/download/psql-query-exporter-0.4.10/psql-query-exporter-0.4.10.tgz
-    version: 0.4.10
-  - apiVersion: v2
-    appVersion: v0.2.16
-    created: "2024-03-30T09:01:49.356422968Z"
-    description: psql-query-exporter Helm chart
-    digest: f0151a2b10d32ac8dc31d020e4b0540c7efa812e38a58430c46303b2bbf7fe7e
-    name: psql-query-exporter
-    type: application
-    urls:
-    - https://github.com/alex-karpenko/helm-charts/releases/download/psql-query-exporter-0.4.9/psql-query-exporter-0.4.9.tgz
-    version: 0.4.9
-  - apiVersion: v2
-    appVersion: v0.2.15
-    created: "2024-03-06T18:09:06.517818523Z"
-    description: psql-query-exporter Helm chart
-    digest: f733ae7f7cfc11046d917285e32ea84e883f34b1ce8a6b02757b5392cd89a914
-    name: psql-query-exporter
-    type: application
-    urls:
-    - https://github.com/alex-karpenko/helm-charts/releases/download/psql-query-exporter-0.4.8/psql-query-exporter-0.4.8.tgz
-    version: 0.4.8
-  - apiVersion: v2
-    appVersion: v0.2.14
-    created: "2024-01-21T17:11:20.655157834Z"
-    description: psql-query-exporter Helm chart
-    digest: e27f0c7077056b5fd90fb978fb8321874e310f9e65d18b32d3a6729f29dbf529
-    name: psql-query-exporter
-    type: application
-    urls:
-    - https://github.com/alex-karpenko/helm-charts/releases/download/psql-query-exporter-0.4.7/psql-query-exporter-0.4.7.tgz
-    version: 0.4.7
-  - apiVersion: v2
-    appVersion: v0.2.13
-    created: "2023-12-22T17:55:39.644820159Z"
-    description: psql-query-exporter Helm chart
-    digest: 337cc39f1fd769728afc1498074ffa449b76e161e0da173f6f506531267f5160
-    name: psql-query-exporter
-    type: application
-    urls:
-    - https://github.com/alex-karpenko/helm-charts/releases/download/psql-query-exporter-0.4.6/psql-query-exporter-0.4.6.tgz
-    version: 0.4.6
-  - apiVersion: v2
-    appVersion: v0.2.12
-    created: "2023-11-24T18:39:58.601923114Z"
-    description: psql-query-exporter Helm chart
-    digest: 203e160760c7d9e75f22ffc237044708be737ff4b4269964d2b9b129f079b6f1
-    name: psql-query-exporter
-    type: application
-    urls:
-    - https://github.com/alex-karpenko/helm-charts/releases/download/psql-query-exporter-0.4.5/psql-query-exporter-0.4.5.tgz
-    version: 0.4.5
-  - apiVersion: v2
-    appVersion: v0.2.11
-    created: "2023-09-30T18:52:39.781032037Z"
-    description: psql-query-exporter Helm chart
-    digest: 48f601e4715bebd1a6fc805765c2b09fd9fe14e342a0698ee5156739454743f3
-    name: psql-query-exporter
-    type: application
-    urls:
-    - https://github.com/alex-karpenko/helm-charts/releases/download/psql-query-exporter-0.4.4/psql-query-exporter-0.4.4.tgz
-    version: 0.4.4
-  - apiVersion: v2
-    appVersion: v0.2.10
-    created: "2023-09-16T17:44:39.209496996Z"
-    description: psql-query-exporter Helm chart
-    digest: c37c72f2fa4033a68a1a04d61b2e809674cd849ed13a82aab8faa2326b04543b
-    name: psql-query-exporter
-    type: application
-    urls:
-    - https://github.com/alex-karpenko/helm-charts/releases/download/psql-query-exporter-0.4.3/psql-query-exporter-0.4.3.tgz
-    version: 0.4.3
-  - apiVersion: v2
-    appVersion: v0.2.9
-    created: "2023-08-05T10:51:12.169297468Z"
-    description: psql-query-exporter Helm chart
-    digest: 3ad79e391f5f3c28488e2a549dcec849b8db2d63399916329df872a16eeb17fa
-    name: psql-query-exporter
-    type: application
-    urls:
-    - https://github.com/alex-karpenko/helm-charts/releases/download/psql-query-exporter-0.4.2/psql-query-exporter-0.4.2.tgz
-    version: 0.4.2
-  - apiVersion: v2
-    appVersion: v0.2.8
-    created: "2023-07-23T07:32:17.489228545Z"
-    description: psql-query-exporter Helm chart
-    digest: 7b1e29f8a5e9a2804a76fa093b0bc7e67158f865a8d384291d70ebeb96bb16fe
-    name: psql-query-exporter
-    type: application
-    urls:
-    - https://github.com/alex-karpenko/helm-charts/releases/download/psql-query-exporter-0.4.1/psql-query-exporter-0.4.1.tgz
-    version: 0.4.1
-  - apiVersion: v2
-    appVersion: v0.2.6
-    created: "2023-04-30T14:46:38.177183559Z"
-    description: psql-query-exporter Helm chart
-    digest: 94cb1afd7d0936a078fe24d47b36af866441bdea7b78e164040ebea3ba7eeadb
-    name: psql-query-exporter
-    type: application
-    urls:
-    - https://github.com/alex-karpenko/helm-charts/releases/download/psql-query-exporter-0.4.0/psql-query-exporter-0.4.0.tgz
-    version: 0.4.0
-  - apiVersion: v2
-    appVersion: v0.2.5
-    created: "2023-04-28T16:54:36.185312903Z"
-    description: psql-query-exporter Helm chart
-    digest: f830b08c3f1c4a46ebe718ed4b6eb0c61998f84a50db3d37b28c4b9319a0a27a
-    name: psql-query-exporter
-    type: application
-    urls:
-    - https://github.com/alex-karpenko/helm-charts/releases/download/psql-query-exporter-0.3.3/psql-query-exporter-0.3.3.tgz
-    version: 0.3.3
-  - apiVersion: v2
-    appVersion: v0.2.4
-    created: "2023-03-25T17:55:03.605002072Z"
-    description: psql-query-exporter Helm chart
-    digest: bfd7c4a9264ae2abce632860923eeccd132ef9d71bd54cc93cceb099c94bec53
-    name: psql-query-exporter
-    type: application
-    urls:
-    - https://github.com/alex-karpenko/helm-charts/releases/download/psql-query-exporter-0.3.2/psql-query-exporter-0.3.2.tgz
-    version: 0.3.2
-  - apiVersion: v2
-    appVersion: v0.2.3
-    created: "2023-03-18T14:49:51.935248387Z"
-    description: psql-query-exporter Helm chart
-    digest: 0dca8dde88e96d29294890b1250ec26f333f59d2af363b281c8d7ce3aaa3045d
-    name: psql-query-exporter
-    type: application
-    urls:
-    - https://github.com/alex-karpenko/helm-charts/releases/download/psql-query-exporter-0.3.1/psql-query-exporter-0.3.1.tgz
-    version: 0.3.1
-  - apiVersion: v2
-    appVersion: v0.2.2
-    created: "2023-02-26T13:50:52.182398444Z"
-    description: psql-query-exporter Helm chart
-    digest: d609b9d8183ec169bd75da38c879f52d0f6d564b5898aa775bc57eaac6a24fe3
-    name: psql-query-exporter
-    type: application
-    urls:
-    - https://github.com/alex-karpenko/helm-charts/releases/download/psql-query-exporter-0.3.0/psql-query-exporter-0.3.0.tgz
-    version: 0.3.0
+    - apiVersion: v2
+      appVersion: v0.3.0
+      created: "2025-04-20T18:21:31.552475674Z"
+      description: psql-query-exporter Helm chart
+      digest: 13043159c2b8fb77177f51cc1ffc92bf22615d1e23bbb796eb29e9ddf2bb602b
+      name: psql-query-exporter
+      type: application
+      urls:
+        - https://github.com/alex-karpenko/helm-charts/releases/download/psql-query-exporter-0.5.0/psql-query-exporter-0.5.0.tgz
+      version: 0.5.0
+    - apiVersion: v2
+      appVersion: v0.2.28
+      created: "2025-03-29T18:53:03.00512401Z"
+      description: psql-query-exporter Helm chart
+      digest: e2517a3f38977da7f3dc09e4babc063d5aee007e87f756bbbc90e845de81fc01
+      name: psql-query-exporter
+      type: application
+      urls:
+        - https://github.com/alex-karpenko/helm-charts/releases/download/psql-query-exporter-0.4.21/psql-query-exporter-0.4.21.tgz
+      version: 0.4.21
+    - apiVersion: v2
+      appVersion: v0.2.27
+      created: "2025-02-07T01:59:51.764365718Z"
+      description: psql-query-exporter Helm chart
+      digest: 1419fac3616d16423bf20435cd28d5b8fc5238f7fb624ad1c589c21d447a6a7b
+      name: psql-query-exporter
+      type: application
+      urls:
+        - https://github.com/alex-karpenko/helm-charts/releases/download/psql-query-exporter-0.4.20/psql-query-exporter-0.4.20.tgz
+      version: 0.4.20
+    - apiVersion: v2
+      appVersion: v0.2.26
+      created: "2025-01-24T15:43:45.161249769Z"
+      description: psql-query-exporter Helm chart
+      digest: 84c30fb7c500106ca795c8b71dc424b83478dce002f3355e3c6f6aeaa5bdf85d
+      name: psql-query-exporter
+      type: application
+      urls:
+        - https://github.com/alex-karpenko/helm-charts/releases/download/psql-query-exporter-0.4.19/psql-query-exporter-0.4.19.tgz
+      version: 0.4.19
+    - apiVersion: v2
+      appVersion: v0.2.25
+      created: "2024-12-06T13:28:11.681152604Z"
+      description: psql-query-exporter Helm chart
+      digest: 8588b940ed4ac216c47a66a8930381b409b219111e834de9f47b7fef3b26a8b9
+      name: psql-query-exporter
+      type: application
+      urls:
+        - https://github.com/alex-karpenko/helm-charts/releases/download/psql-query-exporter-0.4.18/psql-query-exporter-0.4.18.tgz
+      version: 0.4.18
+    - apiVersion: v2
+      appVersion: v0.2.24
+      created: "2024-10-22T17:44:14.204828734Z"
+      description: psql-query-exporter Helm chart
+      digest: 1488e8cf9d7856e930a9c37f9725840993b0cf2d0ef25eae53b0d3f75c1ce166
+      name: psql-query-exporter
+      type: application
+      urls:
+        - https://github.com/alex-karpenko/helm-charts/releases/download/psql-query-exporter-0.4.17/psql-query-exporter-0.4.17.tgz
+      version: 0.4.17
+    - apiVersion: v2
+      appVersion: v0.2.23
+      created: "2024-10-04T18:05:58.898829252Z"
+      description: psql-query-exporter Helm chart
+      digest: e2f0b7ec56482338d75c9d050472966ada289a7e6437d8567d8321109a047f4f
+      name: psql-query-exporter
+      type: application
+      urls:
+        - https://github.com/alex-karpenko/helm-charts/releases/download/psql-query-exporter-0.4.16/psql-query-exporter-0.4.16.tgz
+      version: 0.4.16
+    - apiVersion: v2
+      appVersion: v0.2.22
+      created: "2024-08-06T18:54:21.602988527Z"
+      description: psql-query-exporter Helm chart
+      digest: 756a50f7f80953ccfc3f0d59bcdc22dbf8832e71f048ea4a460456bcaf9734e7
+      name: psql-query-exporter
+      type: application
+      urls:
+        - https://github.com/alex-karpenko/helm-charts/releases/download/psql-query-exporter-0.4.15/psql-query-exporter-0.4.15.tgz
+      version: 0.4.15
+    - apiVersion: v2
+      appVersion: v0.2.21
+      created: "2024-07-26T09:31:04.621733558Z"
+      description: psql-query-exporter Helm chart
+      digest: 25cf096b299f336ae37719dddb45009086112b7577399f34e13566691a95a1fb
+      name: psql-query-exporter
+      type: application
+      urls:
+        - https://github.com/alex-karpenko/helm-charts/releases/download/psql-query-exporter-0.4.14/psql-query-exporter-0.4.14.tgz
+      version: 0.4.14
+    - apiVersion: v2
+      appVersion: v0.2.20
+      created: "2024-07-19T16:23:44.316707118Z"
+      description: psql-query-exporter Helm chart
+      digest: 99060cd01b1427ea68e50c35880eb89dd49d7a623e4399ddad1aa110bfdcac6c
+      name: psql-query-exporter
+      type: application
+      urls:
+        - https://github.com/alex-karpenko/helm-charts/releases/download/psql-query-exporter-0.4.13/psql-query-exporter-0.4.13.tgz
+      version: 0.4.13
+    - apiVersion: v2
+      appVersion: v0.2.19
+      created: "2024-07-12T11:05:16.352274034Z"
+      description: psql-query-exporter Helm chart
+      digest: 8e9af346638bb9366fe5ceba9e01b84f7b08239744c5f178696d6455c058e3b2
+      name: psql-query-exporter
+      type: application
+      urls:
+        - https://github.com/alex-karpenko/helm-charts/releases/download/psql-query-exporter-0.4.12/psql-query-exporter-0.4.12.tgz
+      version: 0.4.12
+    - apiVersion: v2
+      appVersion: v0.2.18
+      created: "2024-05-31T16:43:27.028475847Z"
+      description: psql-query-exporter Helm chart
+      digest: 85afe10b03269933cea735394d0f162336607f24a67348f0d92b97cef87c6f4f
+      name: psql-query-exporter
+      type: application
+      urls:
+        - https://github.com/alex-karpenko/helm-charts/releases/download/psql-query-exporter-0.4.11/psql-query-exporter-0.4.11.tgz
+      version: 0.4.11
+    - apiVersion: v2
+      appVersion: v0.2.17
+      created: "2024-04-07T10:19:58.986288738Z"
+      description: psql-query-exporter Helm chart
+      digest: 62511cb72962cd371291dece1508489f05db9022c4efaf8b395697d9c712f632
+      name: psql-query-exporter
+      type: application
+      urls:
+        - https://github.com/alex-karpenko/helm-charts/releases/download/psql-query-exporter-0.4.10/psql-query-exporter-0.4.10.tgz
+      version: 0.4.10
+    - apiVersion: v2
+      appVersion: v0.2.16
+      created: "2024-03-30T09:01:49.356422968Z"
+      description: psql-query-exporter Helm chart
+      digest: f0151a2b10d32ac8dc31d020e4b0540c7efa812e38a58430c46303b2bbf7fe7e
+      name: psql-query-exporter
+      type: application
+      urls:
+        - https://github.com/alex-karpenko/helm-charts/releases/download/psql-query-exporter-0.4.9/psql-query-exporter-0.4.9.tgz
+      version: 0.4.9
+    - apiVersion: v2
+      appVersion: v0.2.15
+      created: "2024-03-06T18:09:06.517818523Z"
+      description: psql-query-exporter Helm chart
+      digest: f733ae7f7cfc11046d917285e32ea84e883f34b1ce8a6b02757b5392cd89a914
+      name: psql-query-exporter
+      type: application
+      urls:
+        - https://github.com/alex-karpenko/helm-charts/releases/download/psql-query-exporter-0.4.8/psql-query-exporter-0.4.8.tgz
+      version: 0.4.8
+    - apiVersion: v2
+      appVersion: v0.2.14
+      created: "2024-01-21T17:11:20.655157834Z"
+      description: psql-query-exporter Helm chart
+      digest: e27f0c7077056b5fd90fb978fb8321874e310f9e65d18b32d3a6729f29dbf529
+      name: psql-query-exporter
+      type: application
+      urls:
+        - https://github.com/alex-karpenko/helm-charts/releases/download/psql-query-exporter-0.4.7/psql-query-exporter-0.4.7.tgz
+      version: 0.4.7
+    - apiVersion: v2
+      appVersion: v0.2.13
+      created: "2023-12-22T17:55:39.644820159Z"
+      description: psql-query-exporter Helm chart
+      digest: 337cc39f1fd769728afc1498074ffa449b76e161e0da173f6f506531267f5160
+      name: psql-query-exporter
+      type: application
+      urls:
+        - https://github.com/alex-karpenko/helm-charts/releases/download/psql-query-exporter-0.4.6/psql-query-exporter-0.4.6.tgz
+      version: 0.4.6
+    - apiVersion: v2
+      appVersion: v0.2.12
+      created: "2023-11-24T18:39:58.601923114Z"
+      description: psql-query-exporter Helm chart
+      digest: 203e160760c7d9e75f22ffc237044708be737ff4b4269964d2b9b129f079b6f1
+      name: psql-query-exporter
+      type: application
+      urls:
+        - https://github.com/alex-karpenko/helm-charts/releases/download/psql-query-exporter-0.4.5/psql-query-exporter-0.4.5.tgz
+      version: 0.4.5
+    - apiVersion: v2
+      appVersion: v0.2.11
+      created: "2023-09-30T18:52:39.781032037Z"
+      description: psql-query-exporter Helm chart
+      digest: 48f601e4715bebd1a6fc805765c2b09fd9fe14e342a0698ee5156739454743f3
+      name: psql-query-exporter
+      type: application
+      urls:
+        - https://github.com/alex-karpenko/helm-charts/releases/download/psql-query-exporter-0.4.4/psql-query-exporter-0.4.4.tgz
+      version: 0.4.4
+    - apiVersion: v2
+      appVersion: v0.2.10
+      created: "2023-09-16T17:44:39.209496996Z"
+      description: psql-query-exporter Helm chart
+      digest: c37c72f2fa4033a68a1a04d61b2e809674cd849ed13a82aab8faa2326b04543b
+      name: psql-query-exporter
+      type: application
+      urls:
+        - https://github.com/alex-karpenko/helm-charts/releases/download/psql-query-exporter-0.4.3/psql-query-exporter-0.4.3.tgz
+      version: 0.4.3
+    - apiVersion: v2
+      appVersion: v0.2.9
+      created: "2023-08-05T10:51:12.169297468Z"
+      description: psql-query-exporter Helm chart
+      digest: 3ad79e391f5f3c28488e2a549dcec849b8db2d63399916329df872a16eeb17fa
+      name: psql-query-exporter
+      type: application
+      urls:
+        - https://github.com/alex-karpenko/helm-charts/releases/download/psql-query-exporter-0.4.2/psql-query-exporter-0.4.2.tgz
+      version: 0.4.2
+    - apiVersion: v2
+      appVersion: v0.2.8
+      created: "2023-07-23T07:32:17.489228545Z"
+      description: psql-query-exporter Helm chart
+      digest: 7b1e29f8a5e9a2804a76fa093b0bc7e67158f865a8d384291d70ebeb96bb16fe
+      name: psql-query-exporter
+      type: application
+      urls:
+        - https://github.com/alex-karpenko/helm-charts/releases/download/psql-query-exporter-0.4.1/psql-query-exporter-0.4.1.tgz
+      version: 0.4.1
+    - apiVersion: v2
+      appVersion: v0.2.6
+      created: "2023-04-30T14:46:38.177183559Z"
+      description: psql-query-exporter Helm chart
+      digest: 94cb1afd7d0936a078fe24d47b36af866441bdea7b78e164040ebea3ba7eeadb
+      name: psql-query-exporter
+      type: application
+      urls:
+        - https://github.com/alex-karpenko/helm-charts/releases/download/psql-query-exporter-0.4.0/psql-query-exporter-0.4.0.tgz
+      version: 0.4.0
+    - apiVersion: v2
+      appVersion: v0.2.5
+      created: "2023-04-28T16:54:36.185312903Z"
+      description: psql-query-exporter Helm chart
+      digest: f830b08c3f1c4a46ebe718ed4b6eb0c61998f84a50db3d37b28c4b9319a0a27a
+      name: psql-query-exporter
+      type: application
+      urls:
+        - https://github.com/alex-karpenko/helm-charts/releases/download/psql-query-exporter-0.3.3/psql-query-exporter-0.3.3.tgz
+      version: 0.3.3
+    - apiVersion: v2
+      appVersion: v0.2.4
+      created: "2023-03-25T17:55:03.605002072Z"
+      description: psql-query-exporter Helm chart
+      digest: bfd7c4a9264ae2abce632860923eeccd132ef9d71bd54cc93cceb099c94bec53
+      name: psql-query-exporter
+      type: application
+      urls:
+        - https://github.com/alex-karpenko/helm-charts/releases/download/psql-query-exporter-0.3.2/psql-query-exporter-0.3.2.tgz
+      version: 0.3.2
+    - apiVersion: v2
+      appVersion: v0.2.3
+      created: "2023-03-18T14:49:51.935248387Z"
+      description: psql-query-exporter Helm chart
+      digest: 0dca8dde88e96d29294890b1250ec26f333f59d2af363b281c8d7ce3aaa3045d
+      name: psql-query-exporter
+      type: application
+      urls:
+        - https://github.com/alex-karpenko/helm-charts/releases/download/psql-query-exporter-0.3.1/psql-query-exporter-0.3.1.tgz
+      version: 0.3.1
+    - apiVersion: v2
+      appVersion: v0.2.2
+      created: "2023-02-26T13:50:52.182398444Z"
+      description: psql-query-exporter Helm chart
+      digest: d609b9d8183ec169bd75da38c879f52d0f6d564b5898aa775bc57eaac6a24fe3
+      name: psql-query-exporter
+      type: application
+      urls:
+        - https://github.com/alex-karpenko/helm-charts/releases/download/psql-query-exporter-0.3.0/psql-query-exporter-0.3.0.tgz
+      version: 0.3.0
 generated: "2025-07-13T09:23:06.003035772Z"
