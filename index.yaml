@@ -2,6 +2,16 @@ apiVersion: v1
 entries:
   aws-sigv4-proxy:
   - apiVersion: v2
+    appVersion: v0.1.6
+    created: "2025-09-12T15:41:25.065494962Z"
+    description: SigV4 signing proxy to access AWS services.
+    digest: f11eccf3986b2b7177cc0ac666f85afb8895c458bf266a65b12877db99388975
+    name: aws-sigv4-proxy
+    type: application
+    urls:
+    - https://github.com/alex-karpenko/helm-charts/releases/download/aws-sigv4-proxy-0.1.6/aws-sigv4-proxy-0.1.6.tgz
+    version: 0.1.6
+  - apiVersion: v2
     appVersion: v0.1.5
     created: "2025-08-22T20:49:17.848683167Z"
     description: SigV4 signing proxy to access AWS services.
@@ -32,6 +42,16 @@ entries:
     - https://github.com/alex-karpenko/helm-charts/releases/download/aws-sigv4-proxy-0.1.1/aws-sigv4-proxy-0.1.1.tgz
     version: 0.1.1
   git-events-runner:
+  - apiVersion: v2
+    appVersion: v0.4.7
+    created: "2025-09-12T15:41:25.219013475Z"
+    description: K8s operator to run jobs on git repo changes
+    digest: 07d09b8babff7d388a3d2d7a88596178af3c5a4e821bf2793c5c1adf10c640b1
+    name: git-events-runner
+    type: application
+    urls:
+    - https://github.com/alex-karpenko/helm-charts/releases/download/git-events-runner-0.4.7/git-events-runner-0.4.7.tgz
+    version: 0.4.7
   - apiVersion: v2
     appVersion: v0.4.6
     created: "2025-08-22T20:49:18.037614198Z"
@@ -304,6 +324,16 @@ entries:
     version: 0.0.16
   http-dragonfly:
   - apiVersion: v2
+    appVersion: v0.3.8
+    created: "2025-09-12T15:41:25.373145929Z"
+    description: http-dragonfly Helm chart
+    digest: 55dc87aa858660ffcbed162637e215a88e6ea451d0326d9c00e46e44c4fb5e56
+    name: http-dragonfly
+    type: application
+    urls:
+    - https://github.com/alex-karpenko/helm-charts/releases/download/http-dragonfly-0.3.8/http-dragonfly-0.3.8.tgz
+    version: 0.3.8
+  - apiVersion: v2
     appVersion: v0.3.7
     created: "2025-04-12T10:33:24.191912825Z"
     description: http-dragonfly Helm chart
@@ -514,6 +544,16 @@ entries:
     - https://github.com/alex-karpenko/helm-charts/releases/download/http-dragonfly-0.1.0/http-dragonfly-0.1.0.tgz
     version: 0.1.0
   psql-query-exporter:
+  - apiVersion: v2
+    appVersion: v0.3.1
+    created: "2025-09-12T15:41:25.558837512Z"
+    description: psql-query-exporter Helm chart
+    digest: fd2dfb7b2511e5a35bdadc1fe165a1c442ea5d9531c047720a92fc2effd419d3
+    name: psql-query-exporter
+    type: application
+    urls:
+    - https://github.com/alex-karpenko/helm-charts/releases/download/psql-query-exporter-0.5.1/psql-query-exporter-0.5.1.tgz
+    version: 0.5.1
   - apiVersion: v2
     appVersion: v0.3.0
     created: "2025-04-20T18:21:31.552475674Z"
@@ -784,4 +824,4 @@ entries:
     urls:
     - https://github.com/alex-karpenko/helm-charts/releases/download/psql-query-exporter-0.3.0/psql-query-exporter-0.3.0.tgz
     version: 0.3.0
-generated: "2025-08-22T20:49:18.037869152Z"
+generated: "2025-09-12T15:41:25.559279809Z"
