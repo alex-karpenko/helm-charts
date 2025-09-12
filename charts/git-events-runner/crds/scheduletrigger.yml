@@ -88,7 +88,9 @@ spec:
                           nullable: true
                           type: array
                         onChangeOnly:
-                          description: '`true`: run action if repo was changed only `false`: run action every time trigger fire'
+                          description: |-
+                            `true`: run action if repo was changed only
+                            `false`: run action every time trigger fire
                           type: boolean
                         reference:
                           default:
