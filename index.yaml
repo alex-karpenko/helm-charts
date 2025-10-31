@@ -2,6 +2,16 @@ apiVersion: v1
 entries:
   aws-sigv4-proxy:
   - apiVersion: v2
+    appVersion: v0.1.7
+    created: "2025-10-31T19:37:49.604621628Z"
+    description: SigV4 signing proxy to access AWS services.
+    digest: 21ce43d9b3ef316b052e17463960af36f1e1c11fafcdc176217ed1e732651466
+    name: aws-sigv4-proxy
+    type: application
+    urls:
+    - https://github.com/alex-karpenko/helm-charts/releases/download/aws-sigv4-proxy-0.1.7/aws-sigv4-proxy-0.1.7.tgz
+    version: 0.1.7
+  - apiVersion: v2
     appVersion: v0.1.6
     created: "2025-09-12T15:41:25.065494962Z"
     description: SigV4 signing proxy to access AWS services.
@@ -42,6 +52,16 @@ entries:
     - https://github.com/alex-karpenko/helm-charts/releases/download/aws-sigv4-proxy-0.1.1/aws-sigv4-proxy-0.1.1.tgz
     version: 0.1.1
   git-events-runner:
+  - apiVersion: v2
+    appVersion: v0.4.8
+    created: "2025-10-31T19:37:49.725202622Z"
+    description: K8s operator to run jobs on git repo changes
+    digest: 7b234c53e829eaff26e72610ebd44225ebc58c470f90567f3605de29f9871968
+    name: git-events-runner
+    type: application
+    urls:
+    - https://github.com/alex-karpenko/helm-charts/releases/download/git-events-runner-0.4.8/git-events-runner-0.4.8.tgz
+    version: 0.4.8
   - apiVersion: v2
     appVersion: v0.4.7
     created: "2025-09-12T15:41:25.219013475Z"
@@ -545,6 +565,16 @@ entries:
     version: 0.1.0
   psql-query-exporter:
   - apiVersion: v2
+    appVersion: v0.3.2
+    created: "2025-10-31T19:37:49.863567774Z"
+    description: psql-query-exporter Helm chart
+    digest: dd59578de09ec0c32fe574af55e69bcd439f27583ec91d5607fb32265127e4ac
+    name: psql-query-exporter
+    type: application
+    urls:
+    - https://github.com/alex-karpenko/helm-charts/releases/download/psql-query-exporter-0.5.2/psql-query-exporter-0.5.2.tgz
+    version: 0.5.2
+  - apiVersion: v2
     appVersion: v0.3.1
     created: "2025-09-12T15:41:25.558837512Z"
     description: psql-query-exporter Helm chart
@@ -824,4 +854,4 @@ entries:
     urls:
     - https://github.com/alex-karpenko/helm-charts/releases/download/psql-query-exporter-0.3.0/psql-query-exporter-0.3.0.tgz
     version: 0.3.0
-generated: "2025-09-12T15:41:25.559279809Z"
+generated: "2025-10-31T19:37:49.864020551Z"
