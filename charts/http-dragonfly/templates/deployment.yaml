@@ -4,6 +4,10 @@ metadata:
   name: {{ include "http-dragonfly.fullname" . }}
   labels:
     {{- include "http-dragonfly.labels" . | nindent 4 }}
+  {{- with .Values.annotations }}
+  annotations:
+    {{- toYaml . | nindent 4 }}
+  {{- end}}
 spec:
   replicas: {{ .Values.replicaCount }}
   selector:
@@ -32,7 +36,9 @@ spec:
             - --config
             - /app/config.yaml
             - --health-check-port
-            - {{ .Values.service.healthCheck.port | quote }}
+            - {{ .Values.service.healthCheck.port | default 3000 | quote }}
+            - --health-check-timeout
+            - {{ .Values.service.healthCheck.port | default 5 | quote }}
             {{- if .Values.logJson }}
             - --json-log
             {{- end }}
@@ -63,7 +69,7 @@ spec:
           {{- end }}
           securityContext:
             {{- toYaml .Values.securityContext | nindent 12 }}
-          image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
+          image: "{{ .Values.image.registry }}/{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
             - name: health-check

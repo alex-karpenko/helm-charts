@@ -5,7 +5,8 @@
 replicaCount: 1
 
 image:
-  repository: ghcr.io/alex-karpenko/http-dragonfly
+  registry: ghcr.io
+  repository: alex-karpenko/http-dragonfly
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
   tag: ""
@@ -23,6 +24,7 @@ serviceAccount:
   # If not set and create is true, a name is generated using the fullname template
   name: ""
 
+annotations: {}
 podAnnotations: {}
 
 podSecurityContext:
@@ -31,7 +33,7 @@ podSecurityContext:
 securityContext:
   capabilities:
     drop:
-    - ALL
+      - ALL
   readOnlyRootFilesystem: true
   runAsNonRoot: true
   runAsUser: 1000
@@ -40,13 +42,15 @@ service:
   type: ClusterIP
   healthCheck:
     port: 3000 # actually this port is for health checks only
+    timeout: 5 # health checks timeout in seconds, default is 5
     expose: true # expose it as service
   listeners: # these ports are for listeners
     - port: 8000
-      name: default-listener-8080 # name is optional
+      name: default # name is optional, be careful since K8s restricts port name length to 15 characters
 
 ingress:
-  enabled: false
+  enabled: true
+  controller: generic # traefik or generic
   className: ""
   annotations: {}
     # kubernetes.io/ingress.class: nginx
@@ -56,10 +60,19 @@ ingress:
       paths:
         - path: /
           pathType: ImplementationSpecific
+          port: 8000 # this port should match one of the ports from service.listeners section
+          # Per-path configuration (Traefik only)
+          # authExistingSecret: "my-path-specific-secret" # Use a different existing secret for this path
+          # stripPrefixes: # Strip prefixes for this specific path
+          #   - /api/v1
   tls: []
   #  - secretName: chart-example-tls
   #    hosts:
   #      - chart-example.local
+  # Global configuration (Traefik only) - applies to all paths unless overridden per-path
+  # authExistingSecret: "my-auth-secret" # Reference to existing secret shared by all paths
+  # stripPrefixes: # List of prefixes to strip from all paths
+  #   - /api/v1
 
 resources: {}
   # We usually recommend not to specify default resources and to leave this as a conscious
@@ -94,7 +107,6 @@ autoScaling:
   #     - type: Pods
   #       value: 1
   #       periodSeconds: 60
-
 
 # Define pod's environment variables
 podEnv: {}
