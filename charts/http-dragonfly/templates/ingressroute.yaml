@@ -1,0 +1,127 @@
+{{- if and .Values.ingress.enabled (eq .Values.ingress.controller "traefik") }}
+{{- $fullName := include "http-dragonfly.fullname" . -}}
+{{- $svcPort := .Values.service.port -}}
+{{- $stripPrefixes := .Values.ingress.stripPrefixes -}}
+{{- $authExistingSecret := .Values.ingress.authExistingSecret -}}
+apiVersion: traefik.io/v1alpha1
+kind: IngressRoute
+metadata:
+  name: {{ $fullName }}
+  labels:
+    {{- include "http-dragonfly.labels" . | nindent 4 }}
+  {{- with .Values.ingress.annotations }}
+  annotations:
+    {{- toYaml . | nindent 4 }}
+  {{- end }}
+spec:
+  entryPoints:
+    - websecure
+  routes:
+    {{- range $hostIdx, $hostConfig := .Values.ingress.hosts }}
+    {{- $host := $hostConfig.host }}
+    {{- range $pathIdx, $pathConfig := $hostConfig.paths }}
+    {{- $pathAuthExistingSecret := $pathConfig.authExistingSecret }}
+    {{- $pathStripPrefixes := $pathConfig.stripPrefixes }}
+    {{- $hasAuth := or $pathAuthExistingSecret $authExistingSecret }}
+    {{- $hasStripPrefix := or $pathStripPrefixes $stripPrefixes }}
+    {{- $authMiddlewareName := "" }}
+    {{- $stripPrefixMiddlewareName := "" }}
+    {{- if $pathAuthExistingSecret }}
+      {{- $authMiddlewareName = printf "%s-auth-%d-%d" $fullName $hostIdx $pathIdx }}
+    {{- else if $authExistingSecret }}
+      {{- $authMiddlewareName = printf "%s-auth" $fullName }}
+    {{- end }}
+    {{- if $pathStripPrefixes }}
+      {{- $stripPrefixMiddlewareName = printf "%s-stripprefix-%d-%d" $fullName $hostIdx $pathIdx }}
+    {{- else if $stripPrefixes }}
+      {{- $stripPrefixMiddlewareName = printf "%s-stripprefix" $fullName }}
+    {{- end }}
+    - match: Host(`{{ $host }}`){{- if $pathConfig.path }} && PathPrefix(`{{ $pathConfig.path }}`){{- end }}{{- if $pathConfig.method }} && Method(`{{ $pathConfig.method }}`){{- end }}
+      kind: Rule
+      services:
+        - name: {{ $pathConfig.serviceName | default $fullName }}
+          port: {{ $pathConfig.servicePort | default $svcPort }}
+      {{- if or $hasStripPrefix $hasAuth }}
+      middlewares:
+        {{- if $hasStripPrefix }}
+        - name: {{ $stripPrefixMiddlewareName }}
+        {{- end }}
+        {{- if $hasAuth }}
+        - name: {{ $authMiddlewareName }}
+        {{- end }}
+      {{- end }}
+    {{- end }}
+    {{- end }}
+  {{- if .Values.ingress.tls }}
+  tls:
+    {{- range .Values.ingress.tls }}
+    {{- if .secretName }}
+    secretName: {{ .secretName }}
+    {{- end }}
+    {{- end }}
+  {{- else }}
+  tls: {}
+  {{- end }}
+
+{{- if $stripPrefixes }}
+---
+apiVersion: traefik.io/v1alpha1
+kind: Middleware
+metadata:
+  name: {{ $fullName }}-stripprefix
+  labels:
+    {{- include "http-dragonfly.labels" . | nindent 4 }}
+spec:
+  stripPrefix:
+    prefixes:
+    {{- range $stripPrefixes }}
+      - {{ . }}
+    {{- end }}
+{{- end }}
+
+{{- range $hostIdx, $hostConfig := .Values.ingress.hosts }}
+{{- range $pathIdx, $pathConfig := $hostConfig.paths }}
+{{- if $pathConfig.stripPrefixes }}
+---
+apiVersion: traefik.io/v1alpha1
+kind: Middleware
+metadata:
+  name: {{ printf "%s-stripprefix-%d-%d" $fullName $hostIdx $pathIdx }}
+  labels:
+    {{- include "http-dragonfly.labels" $ | nindent 4 }}
+spec:
+  stripPrefix:
+    prefixes:
+    {{- range $pathConfig.stripPrefixes }}
+      - {{ . }}
+    {{- end }}
+{{- end }}
+
+{{- if $pathConfig.authExistingSecret }}
+---
+apiVersion: traefik.io/v1alpha1
+kind: Middleware
+metadata:
+  name: {{ printf "%s-auth-%d-%d" $fullName $hostIdx $pathIdx }}
+  labels:
+    {{- include "http-dragonfly.labels" $ | nindent 4 }}
+spec:
+  basicAuth:
+    secret: {{ $pathConfig.authExistingSecret }}
+{{- end }}
+{{- end }}
+{{- end }}
+
+{{- if $authExistingSecret }}
+---
+apiVersion: traefik.io/v1alpha1
+kind: Middleware
+metadata:
+  name: {{ $fullName }}-auth
+  labels:
+    {{- include "http-dragonfly.labels" . | nindent 4 }}
+spec:
+  basicAuth:
+    secret: {{ $authExistingSecret }}
+{{- end }}
+{{- end }}
