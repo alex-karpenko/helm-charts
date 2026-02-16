@@ -18,6 +18,9 @@ spec:
       targetPort: {{ .port }}
       protocol: TCP
       {{- if .name }}
+      {{- if gt (len .name) 15 }}
+      {{- fail "Length of the service port name should be less that 16 characters" }}
+      {{- end }}
       name: {{ .name }}
       {{- end }}
     {{- end }}
