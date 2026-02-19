@@ -38,7 +38,7 @@ spec:
             - --health-check-port
             - {{ .Values.service.healthCheck.port | default 3000 | quote }}
             - --health-check-timeout
-            - {{ .Values.service.healthCheck.port | default 5 | quote }}
+            - {{ .Values.service.healthCheck.timeout | default 5 | quote }}
             {{- if .Values.logJson }}
             - --json-log
             {{- end }}
