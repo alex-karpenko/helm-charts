@@ -2,6 +2,16 @@ apiVersion: v1
 entries:
   aws-sigv4-proxy:
   - apiVersion: v2
+    appVersion: v0.1.11
+    created: "2026-05-22T15:22:29.507556752Z"
+    description: SigV4 signing proxy to access AWS services.
+    digest: 13c0a5f4bbd0404ccb960526da68e0ce041fab84c077477338c100c97a5b3758
+    name: aws-sigv4-proxy
+    type: application
+    urls:
+    - https://github.com/alex-karpenko/helm-charts/releases/download/aws-sigv4-proxy-0.1.11/aws-sigv4-proxy-0.1.11.tgz
+    version: 0.1.11
+  - apiVersion: v2
     appVersion: v0.1.10
     created: "2026-05-22T15:20:38.667225731Z"
     description: SigV4 signing proxy to access AWS services.
@@ -1044,4 +1054,4 @@ entries:
     urls:
     - https://github.com/alex-karpenko/helm-charts/releases/download/psql-query-exporter-0.3.0/psql-query-exporter-0.3.0.tgz
     version: 0.3.0
-generated: "2026-05-22T15:20:39.073054806Z"
+generated: "2026-05-22T15:22:29.507720393Z"
