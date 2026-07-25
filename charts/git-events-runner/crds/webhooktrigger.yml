@@ -5,10 +5,8 @@ metadata:
 spec:
   group: git-events-runner.rs
   names:
-    categories: []
     kind: WebhookTrigger
     plural: webhooktriggers
-    shortNames: []
     singular: webhooktrigger
   scope: Namespaced
   versions:

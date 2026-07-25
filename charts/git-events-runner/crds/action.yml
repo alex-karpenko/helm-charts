@@ -5,15 +5,12 @@ metadata:
 spec:
   group: git-events-runner.rs
   names:
-    categories: []
     kind: Action
     plural: actions
-    shortNames: []
     singular: action
   scope: Namespaced
   versions:
-    - additionalPrinterColumns: []
-      name: v1alpha1
+    - name: v1alpha1
       schema:
         openAPIV3Schema:
           description: Action custom resource definition
@@ -653,4 +650,3 @@ spec:
           type: object
       served: true
       storage: true
-      subresources: {}

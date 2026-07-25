@@ -5,10 +5,8 @@ metadata:
 spec:
   group: git-events-runner.rs
   names:
-    categories: []
     kind: ScheduleTrigger
     plural: scheduletriggers
-    shortNames: []
     singular: scheduletrigger
   scope: Namespaced
   versions:
