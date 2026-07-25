@@ -5,15 +5,12 @@ metadata:
 spec:
   group: git-events-runner.rs
   names:
-    categories: []
     kind: ClusterAction
     plural: clusteractions
-    shortNames: []
     singular: clusteraction
   scope: Cluster
   versions:
-    - additionalPrinterColumns: []
-      name: v1alpha1
+    - name: v1alpha1
       schema:
         openAPIV3Schema:
           description: ClusterAction custom resource definition
@@ -652,4 +649,3 @@ spec:
           type: object
       served: true
       storage: true
-      subresources: {}

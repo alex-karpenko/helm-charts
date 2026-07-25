@@ -5,15 +5,12 @@ metadata:
 spec:
   group: git-events-runner.rs
   names:
-    categories: []
     kind: GitRepo
     plural: gitrepos
-    shortNames: []
     singular: gitrepo
   scope: Namespaced
   versions:
-    - additionalPrinterColumns: []
-      name: v1alpha1
+    - name: v1alpha1
       schema:
         openAPIV3Schema:
           description: GitRepo custom resource definition
@@ -111,4 +108,3 @@ spec:
           type: object
       served: true
       storage: true
-      subresources: {}
