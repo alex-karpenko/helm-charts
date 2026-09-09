@@ -67,6 +67,13 @@ ingress:
           # authExistingSecret: "my-path-specific-secret" # Use a different existing secret for this path
           # stripPrefixes: # Strip prefixes for this specific path
           #   - /api/v1
+          # pathMatcher: PathPrefix # Traefik v3 matcher function to use, defaults to PathPrefix (v2-compatible)
+          #   Set to any Traefik v3 matcher (e.g. PathRegexp, Path, PathPrefix) and pass the matching
+          #   value via `path`. This is required for routes that used v2 named placeholders
+          #   (e.g. "/users/{userId}/orders/{orderId}"), since Traefik v3 no longer supports them
+          #   and they must be rewritten as a regexp, e.g.:
+          #     path: ^/users/[^/]+/orders/[^/]+$
+          #     pathMatcher: PathRegexp
   tls: []
   #  - secretName: chart-example-tls
   #    hosts:
