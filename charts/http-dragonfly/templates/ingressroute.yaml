@@ -36,7 +36,8 @@ spec:
     {{- else if $stripPrefixes }}
       {{- $stripPrefixMiddlewareName = printf "%s-stripprefix" $fullName }}
     {{- end }}
-    - match: Host(`{{ $host }}`){{- if $pathConfig.path }} && PathPrefix(`{{ $pathConfig.path }}`){{- end }}{{- if $pathConfig.method }} && Method(`{{ $pathConfig.method }}`){{- end }}
+    {{- $pathMatcher := $pathConfig.pathMatcher | default "PathPrefix" }}
+    - match: Host(`{{ $host }}`){{- if $pathConfig.path }} && {{ $pathMatcher }}(`{{ $pathConfig.path }}`){{- end }}{{- if $pathConfig.method }} && Method(`{{ $pathConfig.method }}`){{- end }}
       kind: Rule
       services:
         - name: {{ $pathConfig.serviceName | default $fullName }}
