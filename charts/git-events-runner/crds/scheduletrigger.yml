@@ -80,7 +80,7 @@ spec:
                       description: Trigger watching config
                       properties:
                         files:
-                          description: '`gitignore`-like files specification to calculate hash'
+                          description: "`gitignore`-like files specification to calculate hash"
                           items:
                             type: string
                           nullable: true
@@ -151,7 +151,7 @@ spec:
                   nullable: true
                   type: string
                 state:
-                  description: 'State: idle, running, ...'
+                  description: "State: idle, running, ..."
                   enum:
                     - Idle
                     - Running
