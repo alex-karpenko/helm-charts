@@ -224,7 +224,7 @@ runtimeConfig:
   action:
     maxRunningJobs: 16
     jobWaitingTimeoutSeconds: 300
-    defaultServiceAccount: '{{ include "git-events-runner.actionJobServiceAccountName" . }}'
+    defaultServiceAccount: "{{ include \"git-events-runner.actionJobServiceAccountName\" . }}"
     activeDeadlineSeconds: 3600
     ttlSecondsAfterFinished: 7200
     workdir:
