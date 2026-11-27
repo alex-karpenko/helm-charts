@@ -12,7 +12,7 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v7
         with:
           fetch-depth: 0
 
@@ -25,6 +25,6 @@ jobs:
         run: charts/git-events-runner/prepare-crds.sh
 
       - name: Run chart-releaser
-        uses: helm/chart-releaser-action@v1.6.0
+        uses: helm/chart-releaser-action@v1.9.0
         env:
           CR_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
