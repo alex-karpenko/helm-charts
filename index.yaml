@@ -103,6 +103,16 @@ entries:
     version: 0.1.1
   git-events-runner:
   - apiVersion: v2
+    appVersion: v0.6.0
+    created: "2026-11-27T18:19:39.066782015Z"
+    description: K8s operator to run jobs on git repo changes
+    digest: 922aca53a28785a0a41365132939fb3fa4eff149888849621cd192dd008785ab
+    name: git-events-runner
+    type: application
+    urls:
+    - https://github.com/alex-karpenko/helm-charts/releases/download/git-events-runner-0.6.0/git-events-runner-0.6.0.tgz
+    version: 0.6.0
+  - apiVersion: v2
     appVersion: v0.5.0
     created: "2026-10-24T13:09:12.351740491Z"
     description: K8s operator to run jobs on git repo changes
@@ -785,6 +795,16 @@ entries:
     version: 0.1.0
   psql-query-exporter:
   - apiVersion: v2
+    appVersion: v0.3.9
+    created: "2026-11-27T18:19:39.282421825Z"
+    description: psql-query-exporter Helm chart
+    digest: b2d7bc2ddd90d926fa8e65ecb434cd952af9695b6b2488e92098386db403cece
+    name: psql-query-exporter
+    type: application
+    urls:
+    - https://github.com/alex-karpenko/helm-charts/releases/download/psql-query-exporter-0.5.9/psql-query-exporter-0.5.9.tgz
+    version: 0.5.9
+  - apiVersion: v2
     appVersion: v0.3.8
     created: "2026-10-24T13:09:12.696351452Z"
     description: psql-query-exporter Helm chart
@@ -1134,4 +1154,4 @@ entries:
     urls:
     - https://github.com/alex-karpenko/helm-charts/releases/download/psql-query-exporter-0.3.0/psql-query-exporter-0.3.0.tgz
     version: 0.3.0
-generated: "2026-11-26T18:15:59.977291792Z"
+generated: "2026-11-27T18:19:39.28283012Z"
