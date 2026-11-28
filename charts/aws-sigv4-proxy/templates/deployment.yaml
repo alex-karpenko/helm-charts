@@ -73,6 +73,10 @@ spec:
             - --signature-lifetime
             - {{ . | quote }}
             {{- end }}
+            {{- with .Values.config.requestIdHeader }}
+            - --request-id-header
+            - {{ . | quote }}
+            {{- end }}
             {{- if .Values.config.noVerifySsl }}
             - --no-verify-ssl
             {{- else if .Values.config.rootCa }}

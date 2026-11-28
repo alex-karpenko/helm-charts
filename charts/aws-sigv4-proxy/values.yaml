@@ -142,6 +142,7 @@ config:
   connectTimeout: 10
   requestTimeout: 30
   signatureLifetime: "" # optional lifetime of the signature
+  requestIdHeader: "" # optional name of the header to carry in request ID value, default is x-requiest-id
 
   rootCa: "" # Path to custom trusted root CA bundle
   noVerifySsl: false # Disable SSL certificates verification, dangerous!
